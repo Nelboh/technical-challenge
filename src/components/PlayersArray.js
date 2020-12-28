@@ -1,5 +1,6 @@
 import { Component } from "react";
 
+import teamSorter from "../logic/teamSorter";
 import store from "../data/store";
 
 class PlayersArray extends Component {
@@ -16,7 +17,8 @@ class PlayersArray extends Component {
 
     handleSubmitArray = (e) => {
         e.preventDefault();
-        this.props.handleGenerateTeams({ ...this.state });
+        // this.props.handleGenerateTeams({ ...this.state }); // Will use this later when using own array of players from input fields
+        teamSorter();
     }
 
     render() {
@@ -35,7 +37,7 @@ class PlayersArray extends Component {
                     ))}
                 </>
 
-                <button type="submit" onClick={this.handleGenerateTeams}>Generate Teams</button>
+                <button type="submit" onClick={this.handleSubmitArray}>Generate Teams</button>
             </>
 
         )
