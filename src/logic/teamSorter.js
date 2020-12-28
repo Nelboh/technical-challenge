@@ -14,17 +14,31 @@ const shuffleArray = (array) => {
 
 };
 
+function setTeam(type, team) {
+    return {
+        type: type,
+        payload: team,
+    }
+}
+
+function handleTeam(type, team) {
+    store.dispatch(setTeam(type, team))
+}
+
 // This takes the array and splits it in half. In case of an odd number of players, TeamA will be larger.
 const splitArray = (array) => {
 
     const half = Math.ceil(array.length / 2);
 
-    const TeamA = array.splice(0, half)
-    const TeamB = array.splice(-half)
-    console.log(TeamA)
-    console.log(TeamB)
+    const teamA = array.splice(0, half)
+    const teamB = array.splice(-half)
+    handleTeam("SET_TEAM_A", teamA)
+    handleTeam("SET_TEAM_B", teamB)
+    console.log(teamA)
+    console.log(teamB)
 
 }
+
 
 
 const teamSorter = () => {

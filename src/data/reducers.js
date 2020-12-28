@@ -1,4 +1,5 @@
-// import initial from "./initial";
+import initial from "./initial";
+import store from "./store";
 
 // const addPlayer = (state, { data }) => {
 //     return {
@@ -6,10 +7,20 @@
 //     }
 // }
 
+
+
 const reducer = (state, action) => {
     switch (action.type) {
 
-        case "ADD_PLAYER": return { ...state, playersArray: [...state.playersArray, action.newPlayer] }
+        case "SET_TEAM_A": {
+            return { ...state, teamA: action.payload };
+        }
+
+        case "SET_TEAM_B": {
+            return { ...state, teamB: action.payload };
+        }
+
+        // case "ADD_PLAYER": return { ...state, playersArray: [...state.playersArray, action.newPlayer] }
 
         // case "ADD_PLAYER": return addPlayer(state, action);
 
