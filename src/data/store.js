@@ -13,7 +13,7 @@ const store = createStore(
 
 // });
 
-store.dispatch({ type: "ADD_PLAYER" })
+// store.dispatch({ type: "ADD_PLAYER" })
 
 
 export default store;

@@ -3,26 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
+
 import store from './data/store';
+import { Provider } from "react-redux";
 
-const render = () => {
-  let state = store.getState();
+ReactDOM.render(
 
-  ReactDOM.render(
-    <React.StrictMode>
-      <App
-        playersArray={state.playersArray}
-        handleAddPlayer={() => store.dispatch({ type: "ADD_PLAYER" })}
-      />
-    </React.StrictMode>,
-    document.getElementById('root')
-  );
-};
-
-store.subscribe(render);
-render();
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
 
 
+  document.getElementById('root')
+);
 
 
 // If you want to start measuring performance in your app, pass a function

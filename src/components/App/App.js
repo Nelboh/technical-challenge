@@ -1,5 +1,6 @@
 // import store from "../../data/store";
 import Settings from "../Settings/Settings";
+import PlayersArray from "../PlayersArray";
 
 const App = () => (
   <>
@@ -10,6 +11,8 @@ const App = () => (
     <main>
 
       <Settings />
+
+      <PlayersArray />
 
     </main>
 
