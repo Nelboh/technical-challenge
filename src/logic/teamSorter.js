@@ -32,14 +32,11 @@ const splitArray = (array) => {
 
     const teamA = array.splice(0, half)
     const teamB = array.splice(-half)
+
     handleTeam("SET_TEAM_A", teamA)
     handleTeam("SET_TEAM_B", teamB)
-    console.log(teamA)
-    console.log(teamB)
 
 }
-
-
 
 const teamSorter = () => {
     // Make a copy of the original array 
@@ -47,7 +44,7 @@ const teamSorter = () => {
     let inputArray = [...originalArray]
 
     let shuffledArray = shuffleArray(inputArray)
-    console.log(shuffledArray)
+
     splitArray(shuffledArray)
 };
 

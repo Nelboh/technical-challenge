@@ -20,6 +20,10 @@ const reducer = (state, action) => {
             return { ...state, teamB: action.payload };
         }
 
+        case "SETTINGS_COMPLETE": {
+            return { ...state, settingsComplete: !state.settingsComplete };
+        }
+
         // case "ADD_PLAYER": return { ...state, playersArray: [...state.playersArray, action.newPlayer] }
 
         // case "ADD_PLAYER": return addPlayer(state, action);

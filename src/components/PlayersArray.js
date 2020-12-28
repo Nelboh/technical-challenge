@@ -10,6 +10,7 @@ class PlayersArray extends Component {
 
         this.state = {
             playersArray: [],
+            settingsComplete: false,
         };
 
         this.handleSubmitArray = this.handleSubmitArray.bind(this);
@@ -20,6 +21,8 @@ class PlayersArray extends Component {
 
         // this.props.handleGenerateTeams({ ...this.state }); // Will use this later when using own array of players from input fields
         teamSorter();
+
+        store.dispatch({ type: "SETTINGS_COMPLETE" });
     }
 
     render() {
