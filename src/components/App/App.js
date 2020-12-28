@@ -1,6 +1,5 @@
-import store from "../../data/store";
+// import store from "../../data/store";
 import Settings from "../Settings/Settings";
-
 
 const App = () => (
   <>
