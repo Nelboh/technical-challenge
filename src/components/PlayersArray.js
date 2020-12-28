@@ -17,6 +17,7 @@ class PlayersArray extends Component {
 
     handleSubmitArray = (e) => {
         e.preventDefault();
+
         // this.props.handleGenerateTeams({ ...this.state }); // Will use this later when using own array of players from input fields
         teamSorter();
     }

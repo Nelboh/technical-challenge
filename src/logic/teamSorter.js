@@ -1,5 +1,6 @@
 import store from "../data/store";
 
+// This uses the Fisher-Price algorithm (just kidding, it's Fisher-Yates) to shuffle the names in the array
 const shuffleArray = (inputArray) => {
 
     for (let i = inputArray.length - 1; i > 0; i--) {
@@ -13,7 +14,10 @@ const shuffleArray = (inputArray) => {
 };
 
 const teamSorter = () => {
-    let inputArray = store.getState().playersArray
+    // Make a copy of the original array 
+    let originalArray = store.getState().playersArray
+    let inputArray = [...originalArray]
+
     console.log(inputArray)
     console.log(shuffleArray(inputArray))
 
