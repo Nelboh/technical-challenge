@@ -14,6 +14,7 @@ const shuffleArray = (array) => {
 
 };
 
+// This takes the array and splits it in half. In case of an odd number of players, TeamA will be larger.
 const splitArray = (array) => {
 
     const half = Math.ceil(array.length / 2);
