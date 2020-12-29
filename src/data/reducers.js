@@ -25,7 +25,9 @@ const reducer = (state, action) => {
 
         // case "ADD_PLAYER": return addPlayer(state, action);
 
-        case "RESET": return initial;
+        case "RESET": return {
+            ...initial,
+        }
 
         default: return state;
 

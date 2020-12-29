@@ -6,7 +6,7 @@ const Settings = () => (
 
         <AddPlayers />
 
-        <button>Settings complete!</button>
+        {/* <button>Settings complete!</button> */}
 
     </section>
 
