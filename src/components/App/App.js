@@ -2,7 +2,7 @@
 
 // import { Component } from "react";
 
-// import Settings from "../Settings/Settings";
+import Settings from "../Settings/Settings";
 import PlayersArray from "../PlayersArray";
 import Lists from "../Lists/Lists";
 
@@ -62,7 +62,7 @@ const App = ({ settingsCompleteProp }) => (
 
           <Lists /> */}
 
-      {/* <Settings /> */}
+      <Settings />
 
 
     </main>

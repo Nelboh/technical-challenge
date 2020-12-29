@@ -14,6 +14,7 @@ const shuffleArray = (array) => {
 
 };
 
+// this is an action with a payload
 function setTeam(type, team) {
     return {
         type: type,
@@ -21,6 +22,7 @@ function setTeam(type, team) {
     }
 }
 
+// this sets "team" in the store using the above action
 function handleTeam(type, team) {
     store.dispatch(setTeam(type, team))
 }

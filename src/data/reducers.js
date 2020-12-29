@@ -1,13 +1,6 @@
 import initial from "./initial";
 import store from "./store";
 
-// const addPlayer = (state, { data }) => {
-//     return {
-//         ...state, playersArray: [...state.playersArray, { playerName: data.playerName }]
-//     }
-// }
-
-
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -28,11 +21,11 @@ const reducer = (state, action) => {
             return { ...state, settingsComplete: false };
         }
 
-        // case "ADD_PLAYER": return { ...state, playersArray: [...state.playersArray, action.newPlayer] }
+        case "ADD_PLAYER": return { ...state, players: [...state.players, action.payload] }
 
         // case "ADD_PLAYER": return addPlayer(state, action);
 
-        // case "RESET": return initial;
+        case "RESET": return initial;
 
         default: return state;
 

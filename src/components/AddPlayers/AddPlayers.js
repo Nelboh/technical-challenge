@@ -1,4 +1,7 @@
 import React from "react";
+import store from "../../data/store";
+import handleAddNewPlayer from "../../logic/addNewPlayer";
+import handleResetPlayers from "../../logic/resetPlayers";
 
 class AddPlayer extends React.Component {
     constructor(props) {
@@ -6,12 +9,13 @@ class AddPlayer extends React.Component {
 
         this.state = {
             playerName: "",
-            playersArray: [],
+            players: [],
         };
 
         this.handlePlayerName = this.handlePlayerName.bind(this);
-        this.handleAddPlayer = this.handleAddPlayer.bind(this);
-
+        // this.handleAddPlayer = this.handleAddPlayer.bind(this);
+        this.handleAddToArray = this.handleAddToArray.bind(this);
+        this.handleReset = this.handleReset.bind(this);
     }
 
     // Tracks the player name from the input field
@@ -20,14 +24,24 @@ class AddPlayer extends React.Component {
     }
 
     // Makes a new copy of the array and adds a new player to it
-    handleAddPlayer = (e) => {
+    // handleAddPlayer = (e) => {
+    //     e.preventDefault();
+    //     this.setState({ players: [...this.state.players, this.state.playerName], playerName: "" });
+    // }
+
+    handleAddToArray = (e) => {
         e.preventDefault();
-        this.setState({ playersArray: [...this.state.playersArray, this.state.playerName], playerName: "" });
+        this.setState({ players: [...this.state.players, this.state.playerName], playerName: "" });
+        handleAddNewPlayer("ADD_PLAYER", this.state.playerName)
     }
 
+    handleReset = e => {
+        e.preventDefault();
+        handleResetPlayers("RESET");
+    }
 
     render() {
-        let { playersArray, playerName } = this.state;
+        let { players, playerName } = this.state;
 
         return (
             <>
@@ -44,13 +58,18 @@ class AddPlayer extends React.Component {
                         className="pillButton"
                         type="submit"
                         onClick={this.handleAddPlayer}
-                        disabled={this.state.playerName.length < 1 || this.state.playersArray.length === 10}
+                        disabled={this.state.playerName.length < 1 || this.state.players.length === 10}
                     >Add Player</button>
+
+
+                    <button onClick={this.handleAddToArray}>Add to array</button>
+
+                    <button onClick={this.handleReset}>Reset</button>
                 </div>
 
                 {/* Slice limits the number of players you can enter to 10 */}
                 <>
-                    {playersArray.slice(0, 10).map((playerName, index) => (
+                    {players.slice(0, 10).map((playerName, index) => (
                         <div key={index}>
                             <h3>Player {index + 1}</h3>
 
