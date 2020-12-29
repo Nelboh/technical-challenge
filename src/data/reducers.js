@@ -21,7 +21,11 @@ const reducer = (state, action) => {
         }
 
         case "SETTINGS_COMPLETE": {
-            return { ...state, settingsComplete: !state.settingsComplete };
+            return { ...state, settingsComplete: true };
+        }
+
+        case "SETTINGS_INCOMPLETE": {
+            return { ...state, settingsComplete: false };
         }
 
         // case "ADD_PLAYER": return { ...state, playersArray: [...state.playersArray, action.newPlayer] }
