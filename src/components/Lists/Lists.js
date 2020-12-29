@@ -1,6 +1,7 @@
 import { Component } from "react";
 
 import store from "../../data/store";
+import teamSorter from "../../logic/teamSorter";
 
 class Lists extends Component {
     constructor(props) {
@@ -11,10 +12,22 @@ class Lists extends Component {
         };
 
         this.handleOpenSettings = this.handleOpenSettings.bind(this);
+
+        this.handleReshuffle = this.handleReshuffle.bind(this);
     }
 
     handleOpenSettings = (e) => {
         store.dispatch({ type: "SETTINGS_INCOMPLETE" });
+    }
+
+    handleReshuffle = (e) => {
+        e.preventDefault();
+        teamSorter();
+
+        this.setState({
+            teamA: store.getState().teamA,
+            teamB: store.getState().teamB,
+        })
     }
 
     render() {
@@ -41,6 +54,8 @@ class Lists extends Component {
                 ))}
 
                 <button onClick={this.handleOpenSettings}>Go back to Settings</button>
+
+                <button onClick={this.handleReshuffle}>Reshuffle</button>
             </>
         )
     }
