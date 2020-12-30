@@ -9,8 +9,8 @@ class TeamDetails extends React.Component {
         super(props);
 
         this.state = {
-            teamAName: "",
-            teamBName: "",
+            teamAName: store.getState().teamAName,
+            teamBName: store.getState().teamBName,
         };
 
         this.handleTeamAName = this.handleTeamAName.bind(this);
@@ -22,7 +22,12 @@ class TeamDetails extends React.Component {
     }
 
     handleTeamAName = (e) => {
-        this.setState({ teamAName: e.currentTarget.value });
+        let defaultTeamAName = "Team One";
+        if (e.currentTarget.value === "") {
+            this.setState({ teamAName: defaultTeamAName })
+        } else {
+            this.setState({ teamAName: e.currentTarget.value });
+        }
     }
 
     handleSubmitTeamA = (e) => {
@@ -32,7 +37,12 @@ class TeamDetails extends React.Component {
     }
 
     handleTeamBName = (e) => {
-        this.setState({ teamBName: e.currentTarget.value });
+        let defaultTeamBName = "Team Two";
+        if (e.currentTarget.value === "") {
+            this.setState({ teamBName: defaultTeamBName })
+        } else {
+            this.setState({ teamBName: e.currentTarget.value });
+        }
     }
 
     handleSubmitTeamB = (e) => {
@@ -47,12 +57,18 @@ class TeamDetails extends React.Component {
                 <h1>Set Team Names</h1>
 
                 <h3>Team One Name</h3>
-                <input onChange={this.handleTeamAName} />
+                <input
+                    onChange={this.handleTeamAName}
+                    defaultValue={this.state.teamAName}
+                />
 
                 <button onClick={this.handleSubmitTeamA}>Finished</button>
 
                 <h3>Team Two Name</h3>
-                <input onChange={this.handleTeamBName} />
+                <input
+                    onChange={this.handleTeamBName}
+                    defaultValue={this.state.teamBName}
+                />
 
                 <button onClick={this.handleSubmitTeamB}>Finished</button>
 

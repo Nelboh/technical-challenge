@@ -6,9 +6,9 @@ const initial = {
 
     "teamB": [],
 
-    "teamAName": "",
+    "teamAName": "Team One",
 
-    "teamBName": "",
+    "teamBName": "Team Two",
 
 };
 

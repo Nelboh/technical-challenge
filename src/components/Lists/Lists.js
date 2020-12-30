@@ -9,6 +9,8 @@ class Lists extends Component {
 
         this.state = {
             settingsComplete: true,
+            teamAName: store.getState().teamAName,
+            teamBName: store.getState().teamBName,
         };
 
         this.handleOpenSettings = this.handleOpenSettings.bind(this);
