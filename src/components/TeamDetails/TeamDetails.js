@@ -27,7 +27,7 @@ class TeamDetails extends React.Component {
 
     handleSubmitTeamA = (e) => {
         e.preventDefault();
-        this.setState({ teamAName: [...this.state.teamAName, this.state.teamAName], teamAName: "" });
+        this.setState({ teamAName: [...this.state.teamAName], teamAName: "" });
         handleSetTeamA("SET_TEAM_A_NAME", this.state.teamAName)
     }
 
@@ -37,7 +37,7 @@ class TeamDetails extends React.Component {
 
     handleSubmitTeamB = (e) => {
         e.preventDefault();
-        this.setState({ teamBName: [...this.state.teamBName, this.state.teamBName], teamBName: "" });
+        this.setState({ teamBName: [...this.state.teamBName], teamBName: "" });
         handleSetTeamB("SET_TEAM_B_NAME", this.state.teamBName)
     }
 

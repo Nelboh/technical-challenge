@@ -34,19 +34,21 @@ class Lists extends Component {
 
         let teamA = store.getState().teamA;
         let teamB = store.getState().teamB;
+        let teamAName = store.getState().teamAName;
+        let teamBName = store.getState().teamBName;
 
         return (
             <>
                 <h2>Team Lists Go Here</h2>
 
-                <h2>Team One</h2>
+                <h2>{teamAName}</h2>
                 {teamA.map((player, index) => (
                     <div key={index}>
                         <p>{player}</p>
                     </div>
                 ))}
 
-                <h2>Team Two</h2>
+                <h2>{teamBName}</h2>
                 {teamB.map((player, index) => (
                     <div key={index}>
                         <p>{player}</p>
