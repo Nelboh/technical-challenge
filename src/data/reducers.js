@@ -1,6 +1,4 @@
 import initial from "./initial";
-import store from "./store";
-
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -32,9 +30,6 @@ const reducer = (state, action) => {
         case "UPDATE_PLAYERS": {
             return { ...state, players: action.payload };
         }
-        // case "ADD_PLAYER": return { ...state, players: [...state.players, action.payload] }
-
-        // case "ADD_PLAYER": return addPlayer(state, action);
 
         case "RESET": return {
             ...initial,

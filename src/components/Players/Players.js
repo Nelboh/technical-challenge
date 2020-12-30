@@ -54,10 +54,6 @@ class Players extends Component {
 
     render() {
 
-        // this.setState({ existingPlayers: store.getState().players })
-
-        // let existingPlayers = store.getState().players;
-
         return (
             <>
 

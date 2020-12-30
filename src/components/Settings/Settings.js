@@ -1,4 +1,3 @@
-// import AddPlayers from "../AddPlayers/AddPlayers";
 import TeamDetails from "../TeamDetails/TeamDetails";
 import Players from "../Players/Players";
 
@@ -8,11 +7,7 @@ const Settings = () => (
 
         <TeamDetails />
 
-        {/* <AddPlayers /> */}
-
         <Players />
-
-        {/* <button>Settings complete!</button> */}
 
     </section>
 

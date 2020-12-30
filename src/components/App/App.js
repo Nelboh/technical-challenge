@@ -1,5 +1,4 @@
 import Settings from "../Settings/Settings";
-// import PlayersArray from "../PlayersArray";
 import Lists from "../Lists/Lists";
 
 const App = ({ settingsCompleteProp }) => (
@@ -12,10 +11,10 @@ const App = ({ settingsCompleteProp }) => (
     <main>
 
       {
-        // !this.state.showLists ? (
+
         !settingsCompleteProp ? (
 
-          // <PlayersArray />
+
           <Settings />
 
         ) : (
@@ -26,13 +25,6 @@ const App = ({ settingsCompleteProp }) => (
 
       }
 
-      {/* <PlayersArray />
-
-          <Lists /> */}
-
-
-
-
     </main>
 
     <footer>
@@ -41,8 +33,5 @@ const App = ({ settingsCompleteProp }) => (
 
   </>
 )
-//   }
-// };
-
 
 export default App;
