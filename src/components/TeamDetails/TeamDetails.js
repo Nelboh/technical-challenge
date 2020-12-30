@@ -49,12 +49,12 @@ class TeamDetails extends React.Component {
                 <h3>Team One Name</h3>
                 <input onChange={this.handleTeamAName} />
 
-                <button onClick={this.handleSubmitTeamA}>OK</button>
+                <button onClick={this.handleSubmitTeamA}>Finished</button>
 
                 <h3>Team Two Name</h3>
                 <input onChange={this.handleTeamBName} />
 
-                <button onClick={this.handleSubmitTeamB}>OK</button>
+                <button onClick={this.handleSubmitTeamB}>Finished</button>
 
             </>
         )

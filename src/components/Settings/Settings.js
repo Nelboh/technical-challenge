@@ -1,10 +1,16 @@
-import AddPlayers from "../AddPlayers/AddPlayers";
+// import AddPlayers from "../AddPlayers/AddPlayers";
+import TeamDetails from "../TeamDetails/TeamDetails";
+import Players from "../Players/Players";
 
 const Settings = () => (
 
     <section className="settingsPage">
 
-        <AddPlayers />
+        <TeamDetails />
+
+        {/* <AddPlayers /> */}
+
+        <Players />
 
         {/* <button>Settings complete!</button> */}
 

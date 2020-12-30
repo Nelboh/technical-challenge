@@ -1,42 +1,9 @@
-// import store from "../../data/store";
-
-// import { Component } from "react";
-
 import Settings from "../Settings/Settings";
-import PlayersArray from "../PlayersArray";
+// import PlayersArray from "../PlayersArray";
 import Lists from "../Lists/Lists";
 
-
-
 const App = ({ settingsCompleteProp }) => (
-  // constructor(props) {
-  //   super(props);
 
-  //   this.state = {
-
-  //     showLists: false,
-
-  //   };
-
-  //   console.log(props);
-
-  // }
-
-
-  //   componentDidUpdate(prevProps) {
-  //     if (this.props.settingsCompleteProp === true) {
-  //   this.setState({ showLists: true });
-  // } else {
-  //   this.setState({ showLists: false });
-  // }
-  //   }
-
-
-  // render() {
-  //   // let showLists = this.state;
-
-
-  //   return (
   <>
     <header>
       <h1 className="title">5-a-side<br />Team Generator</h1>
@@ -48,7 +15,8 @@ const App = ({ settingsCompleteProp }) => (
         // !this.state.showLists ? (
         !settingsCompleteProp ? (
 
-          <PlayersArray />
+          // <PlayersArray />
+          <Settings />
 
         ) : (
 
@@ -62,7 +30,7 @@ const App = ({ settingsCompleteProp }) => (
 
           <Lists /> */}
 
-      <Settings />
+
 
 
     </main>
