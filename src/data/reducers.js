@@ -5,6 +5,14 @@ import store from "./store";
 const reducer = (state, action) => {
     switch (action.type) {
 
+        case "SET_TEAM_A_NAME": {
+            return { ...state, teamAName: action.payload }
+        }
+
+        case "SET_TEAM_B_NAME": {
+            return { ...state, teamBName: action.payload }
+        }
+
         case "SET_TEAM_A": {
             return { ...state, teamA: action.payload };
         }
@@ -29,9 +37,9 @@ const reducer = (state, action) => {
             ...initial,
         }
 
+        // as a fallback in case none of the above are used, the default returns the state unchanged
         default: return state;
 
-        // as a fallback in case none of the above are used, the default returns the state unchanged
     }
 };
 

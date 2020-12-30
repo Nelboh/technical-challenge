@@ -10,6 +10,10 @@ const initial = {
 
     "teamB": [],
 
+    "teamAName": "",
+
+    "teamBName": "",
+
 };
 
 export default initial;
