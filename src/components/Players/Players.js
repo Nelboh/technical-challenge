@@ -4,6 +4,7 @@ import store from "../../data/store";
 
 import teamSorter from "../../logic/teamSorter";
 import playersUpdater from "../../logic/playersUpdater";
+import handleResetPlayers from "../../logic/resetPlayers";
 
 
 class Players extends Component {
@@ -18,26 +19,22 @@ class Players extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleReset = this.handleReset.bind(this);
     }
 
     handleChange = (index, e) => {
-        console.log(e.currentTarget.value);
-        console.log(index);
+
         let newPlayers = [];
         let x = this.state.existingPlayers.length;
-        console.log(x);
         let i;
         for (i = 0; i < this.state.existingPlayers.length; i += 1) {
 
-            console.log(this.state.existingPlayers[i])
             if (i === index) {
                 newPlayers.push(e.currentTarget.value)
             } else {
                 newPlayers.push(this.state.existingPlayers[i])
             }
         }
-        console.log(this.state.existingPlayers);
-        console.log(newPlayers)
 
         this.setState({ existingPlayers: newPlayers });
     }
@@ -47,6 +44,12 @@ class Players extends Component {
         playersUpdater(this.state.existingPlayers);
         teamSorter();
         store.dispatch({ type: "SETTINGS_COMPLETE" });
+    }
+
+    handleReset = (e) => {
+        e.preventDefault();
+        handleResetPlayers("RESET");
+        window.location.reload();
     }
 
     render() {
@@ -70,7 +73,10 @@ class Players extends Component {
                     </div>
                 ))}
 
+                <button onClick={this.handleReset}>Reset</button>
+
                 <button type="submit" onClick={this.handleSubmit}>Generate Teams</button>
+
 
             </>
         )
