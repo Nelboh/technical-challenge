@@ -2,6 +2,9 @@ import { Component } from "react";
 import initial from "../../data/initial";
 import store from "../../data/store";
 
+import teamSorter from "../../logic/teamSorter";
+import playersUpdater from "../../logic/playersUpdater";
+
 
 class Players extends Component {
     constructor(props) {
@@ -10,9 +13,11 @@ class Players extends Component {
         this.state = {
             playerName: "",
             existingPlayers: store.getState().players,
+            settingsComplete: false,
         };
 
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange = (index, e) => {
@@ -37,6 +42,13 @@ class Players extends Component {
         this.setState({ existingPlayers: newPlayers });
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+        playersUpdater(this.state.existingPlayers);
+        teamSorter();
+        store.dispatch({ type: "SETTINGS_COMPLETE" });
+    }
+
     render() {
 
         // this.setState({ existingPlayers: store.getState().players })
@@ -46,22 +58,19 @@ class Players extends Component {
         return (
             <>
 
-                <p>Hello!</p>
+                {this.state.existingPlayers.map((player, index) => (
+                    <div key={index}>
+                        <h3>Player {index + 1}</h3>
 
-                <>
+                        <input
+                            defaultValue={player}
+                            index={index}
+                            onBlur={this.handleChange.bind(this, index)}
+                        ></input>
+                    </div>
+                ))}
 
-                    {this.state.existingPlayers.map((player, index) => (
-                        <div key={index}>
-                            <h3>Player {index + 1}</h3>
-
-                            <input
-                                defaultValue={player}
-                                index={index}
-                                onBlur={this.handleChange.bind(this, index)}
-                            ></input>
-                        </div>
-                    ))}
-                </>
+                <button type="submit" onClick={this.handleSubmit}>Generate Teams</button>
 
             </>
         )

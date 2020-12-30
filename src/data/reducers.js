@@ -29,7 +29,10 @@ const reducer = (state, action) => {
             return { ...state, settingsComplete: false };
         }
 
-        case "ADD_PLAYER": return { ...state, players: [...state.players, action.payload] }
+        case "UPDATE_PLAYERS": {
+            return { ...state, players: action.payload };
+        }
+        // case "ADD_PLAYER": return { ...state, players: [...state.players, action.payload] }
 
         // case "ADD_PLAYER": return addPlayer(state, action);
 

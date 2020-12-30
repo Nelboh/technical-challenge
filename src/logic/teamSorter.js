@@ -14,7 +14,7 @@ const shuffleArray = (array) => {
 
 };
 
-// this is an action with a payload
+// This builds an action with the team in the payload
 function setTeam(type, team) {
     return {
         type: type,
@@ -22,7 +22,7 @@ function setTeam(type, team) {
     }
 }
 
-// this sets "team" in the store using the above action
+// This sets "team" in the store using the above action
 function handleTeam(type, team) {
     store.dispatch(setTeam(type, team))
 }
@@ -42,7 +42,7 @@ const splitArray = (array) => {
 
 const teamSorter = () => {
     // Make a copy of the original array 
-    let originalArray = store.getState().playersArray
+    let originalArray = store.getState().players
     let inputArray = [...originalArray]
 
     let shuffledArray = shuffleArray(inputArray)
