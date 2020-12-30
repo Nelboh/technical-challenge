@@ -9,9 +9,7 @@ class Players extends Component {
 
         this.state = {
             playerName: "",
-            existingPlayers: [],
-            newPlayers: [],
-
+            existingPlayers: store.getState().players,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -20,14 +18,30 @@ class Players extends Component {
     handleChange = (index, e) => {
         console.log(e.currentTarget.value);
         console.log(index);
-        this.setState({ playerName: e.currentTarget.value });
+        let newPlayers = [];
+        let x = this.state.existingPlayers.length;
+        console.log(x);
+        let i;
+        for (i = 0; i < this.state.existingPlayers.length; i += 1) {
+
+            console.log(this.state.existingPlayers[i])
+            if (i === index) {
+                newPlayers.push(e.currentTarget.value)
+            } else {
+                newPlayers.push(this.state.existingPlayers[i])
+            }
+        }
+        console.log(this.state.existingPlayers);
+        console.log(newPlayers)
+
+        this.setState({ existingPlayers: newPlayers });
     }
 
     render() {
 
-        let existingPlayers = store.getState().playersArray;
+        // this.setState({ existingPlayers: store.getState().players })
 
-
+        // let existingPlayers = store.getState().players;
 
         return (
             <>
@@ -36,12 +50,12 @@ class Players extends Component {
 
                 <>
 
-                    {existingPlayers.map((existingPlayer, index) => (
+                    {this.state.existingPlayers.map((player, index) => (
                         <div key={index}>
                             <h3>Player {index + 1}</h3>
 
                             <input
-                                defaultValue={existingPlayer}
+                                defaultValue={player}
                                 index={index}
                                 onBlur={this.handleChange.bind(this, index)}
                             ></input>
