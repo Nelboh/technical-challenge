@@ -11,6 +11,10 @@ const reducer = (state, action) => {
             return { ...state, teamBName: action.payload }
         }
 
+        case "SET_TEAM_A_COLOUR": {
+            return { ...state, teamAColour: action.payload }
+        }
+
         case "SET_TEAM_A": {
             return { ...state, teamA: action.payload };
         }

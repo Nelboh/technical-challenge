@@ -3,6 +3,7 @@ import initial from "../../data/initial";
 import store from "../../data/store";
 import handleSetTeamA from "../../logic/setTeamA";
 import handleSetTeamB from "../../logic/setTeamB";
+import handleSetColourA from "../../logic/setColourA";
 
 class TeamDetails extends React.Component {
     constructor(props) {
@@ -11,6 +12,8 @@ class TeamDetails extends React.Component {
         this.state = {
             teamAName: store.getState().teamAName,
             teamBName: store.getState().teamBName,
+            teamAColour: store.getState().teamAColour,
+            teamBColour: "",
         };
 
         this.handleTeamAName = this.handleTeamAName.bind(this);
@@ -19,6 +22,7 @@ class TeamDetails extends React.Component {
         this.handleTeamBName = this.handleTeamBName.bind(this);
         this.handleSubmitTeamB = this.handleSubmitTeamB.bind(this);
 
+        this.handleTeamAColour = this.handleTeamAColour.bind(this);
     }
 
     handleTeamAName = (e) => {
@@ -30,9 +34,15 @@ class TeamDetails extends React.Component {
         }
     }
 
+    handleTeamAColour = (e) => {
+        this.setState({ teamAColour: e.target.value });
+        handleSetColourA("SET_TEAM_A_COLOUR", this.state.teamAColour)
+    }
+
     handleSubmitTeamA = (e) => {
         e.preventDefault();
         this.setState({ teamAName: [...this.state.teamAName], teamAName: "" });
+        this.setState({ teamAColour: [...this.state.teamAColour], teamAColour: "" });
         handleSetTeamA("SET_TEAM_A_NAME", this.state.teamAName)
     }
 
@@ -61,6 +71,19 @@ class TeamDetails extends React.Component {
                     onChange={this.handleTeamAName}
                     defaultValue={this.state.teamAName}
                 />
+
+                <div>
+                    <h3>Kit Colour</h3>
+                    <button
+                        value="colour_1"
+                        className={this.state.teamAColour === "colour_1" ? "kitButton kit1 kitSelected" : "kitButton kit1"}
+                        onClick={this.handleTeamAColour}
+                    >1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                </div>
 
                 <button onClick={this.handleSubmitTeamA}>Finished</button>
 
