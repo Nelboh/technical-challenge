@@ -1,17 +1,17 @@
 // import TeamDetails from "../TeamDetails/TeamDetails";
 import Players from "../Players/Players";
-import Team from "../Team/Team";
-import SubmitTeams from "../SubmitTeams";
+// import Team from "../Team/Team";
+import TeamsForm from "../TeamsForm";
 
 const Settings = () => (
 
     <section className="settingsPage">
 
-        <Team team="0" />
+        {/* <Team team="0" />
 
-        <Team team="1" />
+        <Team team="1" /> */}
 
-        <SubmitTeams />
+        <TeamsForm />
 
         {/* <TeamDetails /> */}
 
