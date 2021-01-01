@@ -63,10 +63,10 @@
     border: 1px solid var(--lightGreen);
     background-color: var(--lightGreen);
     padding: 0.5rem 2rem;
-    border-radius: 20px;
+    border-radius: 50px;
     text-align: center;
     vertical-align: middle;
-    margin: 1rem 0.5rem 0.5rem 1rem;
+    margin: 1rem;
 }
 
 .pillButton:hover {

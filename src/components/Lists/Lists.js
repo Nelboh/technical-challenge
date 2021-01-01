@@ -89,7 +89,7 @@ class Lists extends Component {
                 </div>
 
                 <div className="listButtons">
-                    <button onClick={this.handleOpenSettings} className="pillButton">Go back to Settings</button>
+                    <button onClick={this.handleOpenSettings} className="pillButton">Settings</button>
 
                     <button onClick={this.handleReshuffle} className="pillButton">Reshuffle</button>
                 </div>
