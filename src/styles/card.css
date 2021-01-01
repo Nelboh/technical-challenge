@@ -1,4 +1,4 @@
-.card {
+/* .card {
     border-color: var(--darkGrey); 
     border-style: solid;
     border-width: 3rem 0 3rem 0;
@@ -7,6 +7,35 @@
     margin: 2rem;
     padding: 1rem;
     text-align: center;
+} */
+
+form {
+    margin: 1.5rem;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: 3;
+    /* border-color: var(--darkGrey); 
+    border-style: solid;
+    border-width: 3rem 0 3rem 0; */
+    border-radius: 10px; 
+    background-color: var(--lightGreen);
+    margin: 2rem;
+    /* padding: 1rem; */
+    text-align: center;
+}
+
+.cardTop {
+    background-color: var(--darkGrey);
+    border-radius: 10px 10px 0 0; 
+    /* height: 4rem; */
+}
+
+.cardBottom {
+    background-color: var(--darkGrey);
+    border-radius: 0 0 10px 10px ; 
+    height: 4rem;
 }
 
 .cardWhite {

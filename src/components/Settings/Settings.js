@@ -5,10 +5,10 @@ const Settings = () => (
 
     <section className="settingsPage">
 
-        <h2>Team Settings</h2>
-
         <article className="card">
+            <h2 className="cardTop">Team Settings</h2>
             <TeamsForm />
+            <div className="cardBottom"></div>
         </article>
 
         <article className="card">
