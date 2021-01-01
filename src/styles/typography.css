@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+
+h1 {
+	font-family: "Oswald", sans-serif;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 4rem;
+	color: var(--offWhite);
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	text-align: center;
+}
+
+h2 {
+    font-family: "Oswald", sans-serif;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: calc(12px + 1.5vw);
+	color: var(--offWhite);
+}
+
+label {
+    font-family: "Oswald", sans-serif;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: calc(12px + 1.5vw);
+	color: var(--offWhite);
+}
