@@ -72,7 +72,7 @@ class Players extends Component {
 
                 </div>
 
-                <footer className="cardBottom">
+                <footer className="cardBottom playersButtons">
 
                     <button onClick={this.handleReset} className="pillButton">Reset all</button>
 

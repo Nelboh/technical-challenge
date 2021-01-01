@@ -25,6 +25,7 @@ class SubmitTeams extends React.Component {
                     type="submit"
                     className="pillButton"
                 >Submit team settings</button>
+
             </form>
 
         )
