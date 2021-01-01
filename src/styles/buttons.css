@@ -17,11 +17,13 @@
     border-width: 1px;
     border-radius: 40px;
     background-color: var(--midGreen);
-    padding: 0.5rem 0 0.5rem 0;
+    padding: 0.5rem 0rem 0.5rem 0rem;
     width: 80%;
     margin: auto;
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
+    
+
 }
 
 .kit1 {

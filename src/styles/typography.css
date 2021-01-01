@@ -17,6 +17,7 @@ h2 {
 	font-weight: 500;
 	font-size: calc(30px + 1.5vw);
     color: var(--offWhite);
+    text-align: center;
 }
 
 h3 {
@@ -24,7 +25,8 @@ h3 {
 	text-transform: uppercase;
 	font-weight: 500;
 	font-size: calc(16px + 1.5vw);
-	color: var(--darkGrey);
+    color: var(--darkGrey);
+    text-align: center;
 }
 
 label {
