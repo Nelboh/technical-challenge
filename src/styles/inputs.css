@@ -1,0 +1,8 @@
+input {
+    border: none;
+    background: var(--offWhite);
+    padding: 0.5rem 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

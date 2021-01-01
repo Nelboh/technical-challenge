@@ -19,3 +19,7 @@ code {
 @import "styles/typography.css";
 
 @import "styles/buttons.css";
+
+@import "styles/footer.css";
+
+@import "styles/inputs.css";
