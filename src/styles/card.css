@@ -26,6 +26,8 @@ form {
     border-radius: 0; 
     background-color: var(--lightGreen);
     text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .cardWhite {    
@@ -47,6 +49,8 @@ form {
     background-color: var(--darkGrey);
     border-radius: 0 0 10px 10px ; 
     height: 4rem;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .kitAndName {
