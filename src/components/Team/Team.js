@@ -58,7 +58,7 @@ class Team extends React.Component {
                 />
 
                 <section>
-                    <h3>Kit Colour</h3>
+                    <h3>{this.props.defaultTeamName} Kit Colour</h3>
                     <div className="kitButtonHolder">
                         <button
                             value="1"

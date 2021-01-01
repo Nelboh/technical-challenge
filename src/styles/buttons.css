@@ -18,10 +18,36 @@
     border-radius: 40px;
     background-color: var(--midGreen);
     padding: 0.5rem 0rem 0.5rem 0rem;
-    width: 80%;
+    width: 50%;
     margin: auto;
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 769px) {
+    .kitButton{
+        height: 2rem;
+        width: 2rem;
+    }
+    .kitButtonHolder {
+        width: 40%;
+    }
+}
+
+/* For smaller mobile sizes */
+@media screen and (max-width: 414px) {
+    .kitButtonHolder {
+        width: 100%;
+    }
+}
+
+/* For Galaxy Fold screen sizes */
+@media screen and (max-width: 280px) {
+    .kitButton{
+        height: 1.4rem;
+        width: 1.4rem;
+        
+    }
 }
 
 .kit1 {

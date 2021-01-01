@@ -1,6 +1,6 @@
 @media screen and (min-width: 769px) {
     .playerColumns {
-        columns: 2 auto;
+        columns: 2;
     }
 }
 

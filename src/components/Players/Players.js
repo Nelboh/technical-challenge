@@ -74,7 +74,7 @@ class Players extends Component {
 
                 <footer className="cardBottom">
 
-                    <button onClick={this.handleReset} className="pillButton">Reset</button>
+                    <button onClick={this.handleReset} className="pillButton">Reset all</button>
 
                     <button type="submit" onClick={this.handleSubmit} className="pillButton">Generate Teams</button>
 
