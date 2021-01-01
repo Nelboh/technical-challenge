@@ -42,24 +42,26 @@ class Lists extends Component {
 
         return (
             <>
-                <h2>Team Lists Go Here</h2>
+                <h2>{teamAName} VS. {teamBName}</h2>
 
                 <section className="cardWhite">
-                    <h3>{teamAName}</h3>
+                    <h2 className="cardTop">{teamAName}</h2>
                     {teamA.map((player, index) => (
                         <div key={index}>
                             <p>{player}</p>
                         </div>
                     ))}
+                    <div className="cardBottom"></div>
                 </section>
 
                 <section className="cardWhite">
-                    <h3>{teamBName}</h3>
+                    <h2 className="cardTop">{teamBName}</h2>
                     {teamB.map((player, index) => (
                         <div key={index}>
                             <p>{player}</p>
                         </div>
                     ))}
+                    <div className="cardBottom"></div>
                 </section>
 
                 <button onClick={this.handleOpenSettings} className="pillButton">Go back to Settings</button>

@@ -12,7 +12,9 @@ const Settings = () => (
         </article>
 
         <article className="card">
+            <h2 className="cardTop">Enter players</h2>
             <Players />
+            <div className="cardBottom"></div>
         </article>
 
     </section>
