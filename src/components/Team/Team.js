@@ -1,9 +1,10 @@
 import React from "react";
 import store from "../../data/store";
+
 import compareTeamColours from "../../logic/compareTeamColours";
 import teamColourUpdater from "../../logic/teamColourUpdater";
 import teamNameUpdater from "../../logic/teamNameUpdater";
-// import KitColourButton from "../KitColourButton";
+
 
 class Team extends React.Component {
     constructor(props) {
@@ -18,8 +19,6 @@ class Team extends React.Component {
         this.handleTeamName = this.handleTeamName.bind(this);
         this.handleTeamColour = this.handleTeamColour.bind(this);
     }
-
-
 
     handleTeamName = (e) => {
 
@@ -37,13 +36,13 @@ class Team extends React.Component {
 
         if (compareTeamColours(this.props.team, e.currentTarget.value)) {
 
-            console.log("Not the same!")
+            // console.log("Not the same!")
 
             this.setState({ colour: e.currentTarget.value });
             teamColourUpdater(this.props.team, e.currentTarget.value);
 
         } else {
-            console.log("Is the same!")
+            console.log("Is the same!") // stick an error message in here
         }
     }
 
@@ -89,42 +88,6 @@ class Team extends React.Component {
                         className={this.state.colour === "5" ? "kitButton kit5 kitSelected" : "kitButton kit5"}
                         onClick={this.handleTeamColour}
                     />
-
-
-                    {/* <KitColourButton
-                        colourOption="1"
-                        kitClass="kit1"
-                        handleTeamColour={this.handleTeamColour}
-                        colour={this.state.colour}
-                    /> */}
-
-                    {/* <KitColourButton
-                        colourOption="2"
-                        kitClass="kit2"
-                        handleTeamColour={this.handleTeamColour}
-                        colour={this.state.colour}
-                    /> */}
-
-                    {/* <KitColourButton
-                        colourOption="3"
-                        kitClass="kit3"
-                        handleTeamColour={this.handleTeamColour}
-                        colour={this.state.colour}
-                    />
-
-                    <KitColourButton
-                        colourOption="4"
-                        kitClass="kit4"
-                        handleTeamColour={this.handleTeamColour}
-                        colour={this.state.colour}
-                    />
-
-                    <KitColourButton
-                        colourOption="5"
-                        kitClass="kit5"
-                        handleTeamColour={this.handleTeamColour}
-                        colour={this.state.colour}
-                    /> */}
 
                 </div>
 

@@ -3,21 +3,6 @@ import initial from "./initial";
 const reducer = (state, action) => {
     switch (action.type) {
 
-        // case "SET_TEAM_DETAILS": {
-
-        //     // const index = state.teamSettings.findIndex(teamSettings => teamSettings.id !== action.payload.index);
-
-        //     const index = action.payload.index;
-
-        //     const updatedTeamSettings = [...state.teamSettings];
-
-        //     updatedTeamSettings[index].details.name = action.payload.name;
-
-        //     updatedTeamSettings[index].details.colour = action.payload.colour;
-
-        //     return { ...state, teamSettings: updatedTeamSettings }
-        // }
-
         case "SET_TEAM_NAME": {
             const index = action.payload.index;
 

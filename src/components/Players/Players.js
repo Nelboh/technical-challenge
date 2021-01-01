@@ -1,5 +1,4 @@
 import { Component } from "react";
-import initial from "../../data/initial";
 import store from "../../data/store";
 
 import teamSorter from "../../logic/teamSorter";
@@ -25,7 +24,6 @@ class Players extends Component {
     handleChange = (index, e) => {
 
         let newPlayers = [];
-        // let x = this.state.existingPlayers.length;
         let i;
         for (i = 0; i < this.state.existingPlayers.length; i += 1) {
 
@@ -72,7 +70,6 @@ class Players extends Component {
                 <button onClick={this.handleReset}>Reset</button>
 
                 <button type="submit" onClick={this.handleSubmit}>Generate Teams</button>
-
 
             </>
         )

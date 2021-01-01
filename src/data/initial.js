@@ -6,14 +6,6 @@ const initial = {
 
     "teamB": [],
 
-    // "teamAName": "Team One",
-
-    // "teamBName": "Team Two",
-
-    // "teamAColour": "",
-
-    // "teamBColour": "",
-
     "teamSettings": [
         { "details": { "name": "Team One", "colour": "1" } },
         { "details": { "name": "Team Two", "colour": "2" } },

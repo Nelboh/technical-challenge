@@ -1,6 +1,4 @@
 import React from "react";
-import initial from "../data/initial";
-import store from "../data/store";
 import Team from "./Team/Team";
 
 class SubmitTeams extends React.Component {

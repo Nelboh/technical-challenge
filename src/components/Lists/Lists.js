@@ -1,6 +1,7 @@
 import { Component } from "react";
 
 import store from "../../data/store";
+
 import teamSorter from "../../logic/teamSorter";
 
 class Lists extends Component {
@@ -9,8 +10,8 @@ class Lists extends Component {
 
         this.state = {
             settingsComplete: true,
-            teamAName: store.getState().teamAName,
-            teamBName: store.getState().teamBName,
+            teamAName: store.getState().teamSettings[0].details.name,
+            teamBName: store.getState().teamSettings[1].details.name,
         };
 
         this.handleOpenSettings = this.handleOpenSettings.bind(this);
@@ -36,8 +37,8 @@ class Lists extends Component {
 
         let teamA = store.getState().teamA;
         let teamB = store.getState().teamB;
-        let teamAName = store.getState().teamAName;
-        let teamBName = store.getState().teamBName;
+        let teamAName = store.getState().teamSettings[0].details.name;
+        let teamBName = store.getState().teamSettings[1].details.name;
 
         return (
             <>
