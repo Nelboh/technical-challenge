@@ -44,7 +44,7 @@ class Lists extends Component {
             <>
                 <h2>Team Lists Go Here</h2>
 
-                <section className="card">
+                <section className="cardWhite">
                     <h3>{teamAName}</h3>
                     {teamA.map((player, index) => (
                         <div key={index}>
@@ -53,7 +53,7 @@ class Lists extends Component {
                     ))}
                 </section>
 
-                <section className="card">
+                <section className="cardWhite">
                     <h3>{teamBName}</h3>
                     {teamB.map((player, index) => (
                         <div key={index}>

@@ -1,8 +1,20 @@
 .card {
     border-color: var(--darkGrey); 
     border-style: solid;
-    border-width: 3rem 1px 3rem 1px;
+    border-width: 3rem 0 3rem 0;
     border-radius: 10px;
+    background-color: var(--lightGreen);
+    margin: 2rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.cardWhite {
+    border-color: var(--darkGrey); 
+    border-style: solid;
+    border-width: 3rem 0 3rem 0;
+    border-radius: 10px;
+    background-color: var(--offWhite);
     margin: 2rem;
     padding: 1rem;
     text-align: center;

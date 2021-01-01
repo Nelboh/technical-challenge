@@ -35,7 +35,7 @@
 }
 
 .pillButton {
-    border: 1px solid var(--lightGreen);
+    border: 1px solid var(--darkGrey);
     background-color: var(--lightGreen);
     padding: 0.5rem 2rem;
     border-radius: 20px;
