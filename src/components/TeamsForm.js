@@ -16,8 +16,6 @@ class SubmitTeams extends React.Component {
         return (
             <form onSubmit={this.handleSubmitTeams}>
 
-                <h1>Team Settings</h1>
-
                 <Team team="0" defaultTeamName="Team One" />
 
                 <Team team="1" defaultTeamName="Team Two" />

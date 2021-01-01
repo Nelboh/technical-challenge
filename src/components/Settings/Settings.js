@@ -5,6 +5,8 @@ const Settings = () => (
 
     <section className="settingsPage">
 
+        <h2>Team Settings</h2>
+
         <TeamsForm />
 
         <Players />
