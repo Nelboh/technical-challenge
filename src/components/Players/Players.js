@@ -25,7 +25,7 @@ class Players extends Component {
     handleChange = (index, e) => {
 
         let newPlayers = [];
-        let x = this.state.existingPlayers.length;
+        // let x = this.state.existingPlayers.length;
         let i;
         for (i = 0; i < this.state.existingPlayers.length; i += 1) {
 

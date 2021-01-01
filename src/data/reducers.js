@@ -3,31 +3,55 @@ import initial from "./initial";
 const reducer = (state, action) => {
     switch (action.type) {
 
-        case "SET_TEAM_DETAILS": {
+        // case "SET_TEAM_DETAILS": {
 
-            // const index = state.teamSettings.findIndex(teamSettings => teamSettings.id !== action.payload.index);
+        //     // const index = state.teamSettings.findIndex(teamSettings => teamSettings.id !== action.payload.index);
 
+        //     const index = action.payload.index;
+
+        //     const updatedTeamSettings = [...state.teamSettings];
+
+        //     updatedTeamSettings[index].details.name = action.payload.name;
+
+        //     updatedTeamSettings[index].details.colour = action.payload.colour;
+
+        //     return { ...state, teamSettings: updatedTeamSettings }
+        // }
+
+        case "SET_TEAM_NAME": {
             const index = action.payload.index;
 
-            const updatedTeamSettings = [...state.teamSettings];
-
-            updatedTeamSettings[index].details.name = action.payload.name;
-
-            updatedTeamSettings[index].details.colour = action.payload.colour;
-
-            return { ...state, teamSettings: updatedTeamSettings }
+            return {
+                ...state,
+                teamSettings: {
+                    ...state.teamSettings,
+                    [index]: {
+                        ...state.teamSettings[index],
+                        details: {
+                            ...state.teamSettings[index].details,
+                            name: action.payload.name
+                        }
+                    }
+                }
+            }
         }
 
-        case "SET_TEAM_A_NAME": {
-            return { ...state, teamAName: action.payload }
-        }
+        case "SET_TEAM_COLOUR": {
+            const index = action.payload.index;
 
-        case "SET_TEAM_B_NAME": {
-            return { ...state, teamBName: action.payload }
-        }
-
-        case "SET_TEAM_A_COLOUR": {
-            return { ...state, teamAColour: action.payload }
+            return {
+                ...state,
+                teamSettings: {
+                    ...state.teamSettings,
+                    [index]: {
+                        ...state.teamSettings[index],
+                        details: {
+                            ...state.teamSettings[index].details,
+                            colour: action.payload.colour
+                        }
+                    }
+                }
+            }
         }
 
         case "SET_TEAM_A": {
