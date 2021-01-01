@@ -1,20 +1,35 @@
 .kitButton {
     border: none;
     border-radius: 50%;
-    height: 2rem;
-    width: 2rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .kitButton:hover {
-    box-shadow: 0 0 0 4px var(--offWhite);
+    box-shadow: 0 0 0 4px var(--bgGrey);
+}
+
+.kitButtonHolder {
+    border-color: var(--midGreen); 
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 40px;
+    background-color: var(--midGreen);
+    padding: 0.5rem 0 0.5rem 0;
+    width: 80%;
+    margin: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .kit1 {
-    background-color: rgb(77, 148, 255);
+    background-color: rgb(87, 224, 255);
 }
 
 .kit2 {
-    background-color: rgb(109, 245, 255);
+    background-color: rgb(24, 255, 70);
 }
 
 .kit3 {
@@ -30,8 +45,8 @@
 }
 
 .kitSelected {
-    box-shadow: 0 0 0 4px var(--offWhite);
-    color: var(--offWhite)
+    box-shadow: 0 0 0 4px var(--bgGrey);
+    color: var(--bgGrey)
 }
 
 .pillButton {
@@ -53,3 +68,9 @@
 .listButtons {
     margin: auto;
 }
+
+/* Removed default outline focus, but have replaced with box shadow outline so it's still clearly visible when selected. Checked it would pass contrast ratio check here: https://webaim.org/resources/contrastchecker/ */
+
+button:focus {
+    outline:0;
+} 

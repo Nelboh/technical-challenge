@@ -57,39 +57,41 @@ class Team extends React.Component {
                     defaultValue={this.state.name}
                 />
 
-                <div>
+                <section>
                     <h3>Kit Colour</h3>
-                    <button
-                        value="1"
-                        className={this.state.colour === "1" ? "kitButton kit1 kitSelected" : "kitButton kit1"}
-                        onClick={this.handleTeamColour}
-                    />
+                    <div className="kitButtonHolder">
+                        <button
+                            value="1"
+                            className={this.state.colour === "1" ? "kitButton kit1 kitSelected" : "kitButton kit1"}
+                            onClick={this.handleTeamColour}
+                        />
 
-                    <button
-                        value="2"
-                        className={this.state.colour === "2" ? "kitButton kit2 kitSelected" : "kitButton kit2"}
-                        onClick={this.handleTeamColour}
-                    />
+                        <button
+                            value="2"
+                            className={this.state.colour === "2" ? "kitButton kit2 kitSelected" : "kitButton kit2"}
+                            onClick={this.handleTeamColour}
+                        />
 
-                    <button
-                        value="3"
-                        className={this.state.colour === "3" ? "kitButton kit3 kitSelected" : "kitButton kit3"}
-                        onClick={this.handleTeamColour}
-                    />
+                        <button
+                            value="3"
+                            className={this.state.colour === "3" ? "kitButton kit3 kitSelected" : "kitButton kit3"}
+                            onClick={this.handleTeamColour}
+                        />
 
-                    <button
-                        value="4"
-                        className={this.state.colour === "4" ? "kitButton kit4 kitSelected" : "kitButton kit4"}
-                        onClick={this.handleTeamColour}
-                    />
+                        <button
+                            value="4"
+                            className={this.state.colour === "4" ? "kitButton kit4 kitSelected" : "kitButton kit4"}
+                            onClick={this.handleTeamColour}
+                        />
 
-                    <button
-                        value="5"
-                        className={this.state.colour === "5" ? "kitButton kit5 kitSelected" : "kitButton kit5"}
-                        onClick={this.handleTeamColour}
-                    />
+                        <button
+                            value="5"
+                            className={this.state.colour === "5" ? "kitButton kit5 kitSelected" : "kitButton kit5"}
+                            onClick={this.handleTeamColour}
+                        />
 
-                </div>
+                    </div>
+                </section>
 
             </>
         )
