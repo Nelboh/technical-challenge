@@ -58,9 +58,9 @@ class Lists extends Component {
                     </div>
                 ))}
 
-                <button onClick={this.handleOpenSettings}>Go back to Settings</button>
+                <button onClick={this.handleOpenSettings} className="pillButton">Go back to Settings</button>
 
-                <button onClick={this.handleReshuffle}>Reshuffle</button>
+                <button onClick={this.handleReshuffle} className="pillButton">Reshuffle</button>
             </>
         )
     }

@@ -67,9 +67,9 @@ class Players extends Component {
                     </div>
                 ))}
 
-                <button onClick={this.handleReset}>Reset</button>
+                <button onClick={this.handleReset} className="pillButton">Reset</button>
 
-                <button type="submit" onClick={this.handleSubmit}>Generate Teams</button>
+                <button type="submit" onClick={this.handleSubmit} className="pillButton">Generate Teams</button>
 
             </>
         )

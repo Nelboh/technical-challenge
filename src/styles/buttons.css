@@ -1,0 +1,55 @@
+.kitButton {
+    border: none;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+}
+
+.kitButton:hover {
+    box-shadow: 0 0 0 4px var(--darkGrey);
+}
+
+.kit1 {
+    background-color: rgb(77, 148, 255);
+}
+
+.kit2 {
+    background-color: rgb(109, 245, 255);
+}
+
+.kit3 {
+    background-color: rgb(255, 229, 29);
+}
+
+.kit4 {
+    background-color: rgb(216, 27, 27);
+}
+
+.kit5 {
+    background-color: hotpink;
+}
+
+.kitSelected {
+    box-shadow: 0 0 0 4px var(--offWhite);
+    color: var(--offWhite)
+}
+
+.pillButton {
+    border: 1px solid var(--lightGreen);
+    background-color: var(--lightGreen);
+    padding: 0.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 1rem;
+}
+
+.pillButton:hover {
+    background-color: var(--midGreen);
+    border: 1px solid var(--midGreen);
+    cursor: pointer;
+}
+
+.listButtons {
+    margin: auto;
+}
