@@ -41,33 +41,39 @@ class Lists extends Component {
         let teamBName = store.getState().teamSettings[1].details.name;
 
         return (
-            <>
+            <section>
                 <h2>{teamAName} VS. {teamBName}</h2>
 
-                <section className="cardWhite">
-                    <h2 className="cardTop">{teamAName}</h2>
-                    {teamA.map((player, index) => (
-                        <div key={index}>
-                            <p>{player}</p>
-                        </div>
-                    ))}
-                    <div className="cardBottom"></div>
-                </section>
+                <div className="twoLists">
 
-                <section className="cardWhite">
-                    <h2 className="cardTop">{teamBName}</h2>
-                    {teamB.map((player, index) => (
-                        <div key={index}>
-                            <p>{player}</p>
-                        </div>
-                    ))}
-                    <div className="cardBottom"></div>
-                </section>
+                    <section className="cardWhite">
+                        <h2 className="cardTop">{teamAName}</h2>
+                        {teamA.map((player, index) => (
+                            <div key={index}>
+                                <p>{player}</p>
+                            </div>
+                        ))}
+                        <div className="cardBottom"></div>
+                    </section>
 
-                <button onClick={this.handleOpenSettings} className="pillButton">Go back to Settings</button>
+                    <section className="cardWhite">
+                        <h2 className="cardTop">{teamBName}</h2>
+                        {teamB.map((player, index) => (
+                            <div key={index}>
+                                <p>{player}</p>
+                            </div>
+                        ))}
+                        <div className="cardBottom"></div>
+                    </section>
 
-                <button onClick={this.handleReshuffle} className="pillButton">Reshuffle</button>
-            </>
+                </div>
+
+                <div>
+                    <button onClick={this.handleOpenSettings} className="pillButton">Go back to Settings</button>
+
+                    <button onClick={this.handleReshuffle} className="pillButton">Reshuffle</button>
+                </div>
+            </section>
         )
     }
 }

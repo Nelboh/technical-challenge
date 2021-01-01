@@ -1,0 +1,13 @@
+.twoLists {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;    
+}
+
+@media screen and (max-width: 768px) {
+    .twoLists {
+        display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;    
+    }
+}
