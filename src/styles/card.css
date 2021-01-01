@@ -76,4 +76,10 @@ form {
     padding-right: 2rem;
 }
 
+.teamsDivider {
+    width: 100%;
+    border-bottom: 7px dotted var(--darkGrey);
+    margin: auto;
+    margin-bottom: 3rem;
+}
 

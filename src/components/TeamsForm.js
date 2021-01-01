@@ -19,6 +19,8 @@ class SubmitTeams extends React.Component {
 
                 <Team team="0" defaultTeamName="Team One" />
 
+                <div className="teamsDivider" />
+
                 <Team team="1" defaultTeamName="Team Two" />
 
                 <button
