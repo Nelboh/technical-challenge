@@ -57,7 +57,7 @@ class Team extends React.Component {
                     defaultValue={this.state.name}
                 />
 
-                <section>
+                <section className="kitColourSpacer">
                     <h3>{this.props.defaultTeamName} Kit Colour</h3>
                     <div className="kitButtonHolder">
                         <button
