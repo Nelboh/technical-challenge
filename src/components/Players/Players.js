@@ -53,25 +53,30 @@ class Players extends Component {
     render() {
 
         return (
-            <>
+            <section>
+                <div className="playerColumns">
 
-                {this.state.existingPlayers.map((player, index) => (
-                    <div key={index}>
-                        <h3>Player {index + 1}</h3>
+                    {this.state.existingPlayers.map((player, index) => (
+                        <div className="playerRows" key={index}>
 
-                        <input
-                            defaultValue={player}
-                            index={index}
-                            onBlur={this.handleChange.bind(this, index)}
-                        ></input>
-                    </div>
-                ))}
+                            <h3 className="playerLabel">Player {index + 1}</h3>
+
+                            <input
+                                defaultValue={player}
+                                index={index}
+                                onBlur={this.handleChange.bind(this, index)}
+                            ></input>
+
+                        </div>
+                    ))}
+
+                </div>
 
                 <button onClick={this.handleReset} className="pillButton">Reset</button>
 
                 <button type="submit" onClick={this.handleSubmit} className="pillButton">Generate Teams</button>
 
-            </>
+            </section>
         )
     }
 }

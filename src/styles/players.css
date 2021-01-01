@@ -1,0 +1,16 @@
+@media screen and (min-width: 769px) {
+    .playerColumns {
+        columns: 2 auto;
+    }
+}
+
+.playerRows {
+    display: inline-block;
+    grid-template-rows: repeat(2);
+    margin: 1rem; 
+    margin-bottom: 0;
+}
+
+.playerLabel {
+    text-align: left;
+}
