@@ -44,19 +44,23 @@ class Lists extends Component {
             <>
                 <h2>Team Lists Go Here</h2>
 
-                <h2>{teamAName}</h2>
-                {teamA.map((player, index) => (
-                    <div key={index}>
-                        <p>{player}</p>
-                    </div>
-                ))}
+                <section className="card">
+                    <h3>{teamAName}</h3>
+                    {teamA.map((player, index) => (
+                        <div key={index}>
+                            <p>{player}</p>
+                        </div>
+                    ))}
+                </section>
 
-                <h2>{teamBName}</h2>
-                {teamB.map((player, index) => (
-                    <div key={index}>
-                        <p>{player}</p>
-                    </div>
-                ))}
+                <section className="card">
+                    <h3>{teamBName}</h3>
+                    {teamB.map((player, index) => (
+                        <div key={index}>
+                            <p>{player}</p>
+                        </div>
+                    ))}
+                </section>
 
                 <button onClick={this.handleOpenSettings} className="pillButton">Go back to Settings</button>
 

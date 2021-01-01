@@ -16,7 +16,7 @@ h2 {
 	text-transform: uppercase;
 	font-weight: 500;
 	font-size: calc(30px + 1.5vw);
-	color: var(--offWhite);
+    color: var(--offWhite);
 }
 
 h3 {

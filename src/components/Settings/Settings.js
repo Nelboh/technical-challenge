@@ -7,9 +7,13 @@ const Settings = () => (
 
         <h2>Team Settings</h2>
 
-        <TeamsForm />
+        <article className="card">
+            <TeamsForm />
+        </article>
 
-        <Players />
+        <article className="card">
+            <Players />
+        </article>
 
     </section>
 
