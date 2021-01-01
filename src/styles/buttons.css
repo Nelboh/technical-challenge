@@ -58,7 +58,7 @@
     width: 2rem;
     margin-left: 2rem;
     margin-right: 0.5rem;
-    background-color: red;
+    background-color: var(--offWhite);
 }
 
 .pillButton {
@@ -78,7 +78,11 @@
 }
 
 .listButtons {
-    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
 }
 
 /* Removed default outline focus, but have replaced with box shadow outline so it's still clearly visible when selected. Checked it would pass contrast ratio check here: https://webaim.org/resources/contrastchecker/ */

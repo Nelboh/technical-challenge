@@ -12,6 +12,7 @@ class Lists extends Component {
             settingsComplete: true,
             teamAName: store.getState().teamSettings[0].details.name,
             teamBName: store.getState().teamSettings[1].details.name,
+
         };
 
         this.handleOpenSettings = this.handleOpenSettings.bind(this);
@@ -49,7 +50,7 @@ class Lists extends Component {
                     <section className="cardHolder">
 
                         <header className="cardTop kitAndName">
-                            <h2>{teamAName}</h2>
+                            <h3 className="h3alternate">{teamAName}</h3>
                             <div className="chosenKitColour"></div>
                         </header>
 
@@ -68,7 +69,7 @@ class Lists extends Component {
                     <section className="cardHolder">
 
                         <header className="cardTop kitAndName">
-                            <h2>{teamBName}</h2>
+                            <h3 className="h3alternate">{teamBName}</h3>
                             <div className="chosenKitColour"></div>
                         </header>
 
@@ -87,7 +88,7 @@ class Lists extends Component {
 
                 </div>
 
-                <div>
+                <div className="listButtons">
                     <button onClick={this.handleOpenSettings} className="pillButton">Go back to Settings</button>
 
                     <button onClick={this.handleReshuffle} className="pillButton">Reshuffle</button>
