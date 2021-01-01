@@ -54,7 +54,7 @@ class Players extends Component {
 
         return (
             <section>
-                <div className="playerColumns">
+                <div className="playerColumns cardGreen">
 
                     {this.state.existingPlayers.map((player, index) => (
                         <div className="playerRows" key={index}>
@@ -72,9 +72,11 @@ class Players extends Component {
 
                 </div>
 
-                <button onClick={this.handleReset} className="pillButton">Reset</button>
+                <footer class="cardBottom">
+                    <button onClick={this.handleReset} className="pillButton">Reset</button>
 
-                <button type="submit" onClick={this.handleSubmit} className="pillButton">Generate Teams</button>
+                    <button type="submit" onClick={this.handleSubmit} className="pillButton">Generate Teams</button>
+                </footer>
 
             </section>
         )

@@ -14,6 +14,7 @@ class SubmitTeams extends React.Component {
 
     render() {
         return (
+
             <form onSubmit={this.handleSubmitTeams}>
 
                 <Team team="0" defaultTeamName="Team One" />
@@ -25,6 +26,7 @@ class SubmitTeams extends React.Component {
                     className="pillButton"
                 >Submit team settings</button>
             </form>
+
         )
     }
 

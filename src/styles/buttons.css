@@ -51,6 +51,16 @@
     color: var(--bgGrey)
 }
 
+.chosenKitColour {
+    border: none;
+    border-radius: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    background-color: red;
+}
+
 .pillButton {
     border: 1px solid var(--darkGrey);
     background-color: var(--lightGreen);

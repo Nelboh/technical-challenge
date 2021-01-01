@@ -13,21 +13,24 @@ form {
     margin: 1.5rem;
 }
 
-.card {
+.cardHolder {
     display: grid;
     grid-template-rows: 3;
-    border-radius: 10px; 
-    background-color: var(--lightGreen);
+    border-radius: 20px; 
+    background-color: var(--offWhite);
     margin: 2rem;
     text-align: center;
 }
 
-.cardWhite {
-    display: grid;
-    grid-template-rows: 3;
-    border-radius: 10px; 
+.cardGreen {
+    border-radius: 0; 
+    background-color: var(--lightGreen);
+    text-align: center;
+}
+
+.cardWhite {    
+    border-radius: 0; 
     background-color: var(--offWhite);
-    margin: 2rem;
     text-align: center;
 }
 
@@ -36,10 +39,22 @@ form {
     border-radius: 10px 10px 0 0; 
 }
 
+.cardBody{
+    border-radius: 0; 
+}
+
 .cardBottom {
     background-color: var(--darkGrey);
     border-radius: 0 0 10px 10px ; 
     height: 4rem;
+}
+
+.kitAndName {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 

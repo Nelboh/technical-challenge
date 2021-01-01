@@ -46,24 +46,43 @@ class Lists extends Component {
 
                 <div className="twoLists">
 
-                    <section className="cardWhite">
-                        <h2 className="cardTop">{teamAName}</h2>
-                        {teamA.map((player, index) => (
-                            <div key={index}>
-                                <p>{player}</p>
-                            </div>
-                        ))}
-                        <div className="cardBottom"></div>
+                    <section className="cardHolder">
+
+                        <header className="cardTop kitAndName">
+                            <h2>{teamAName}</h2>
+                            <div className="chosenKitColour"></div>
+                        </header>
+
+                        <div className="cardWhite">
+
+                            {teamA.map((player, index) => (
+                                <div key={index}>
+                                    <p>{player}</p>
+                                </div>
+                            ))}
+                        </div>
+
+                        <footer className="cardBottom"></footer>
                     </section>
 
-                    <section className="cardWhite">
-                        <h2 className="cardTop">{teamBName}</h2>
-                        {teamB.map((player, index) => (
-                            <div key={index}>
-                                <p>{player}</p>
-                            </div>
-                        ))}
-                        <div className="cardBottom"></div>
+                    <section className="cardHolder">
+
+                        <header className="cardTop kitAndName">
+                            <h2>{teamBName}</h2>
+                            <div className="chosenKitColour"></div>
+                        </header>
+
+                        <div className="cardWhite">
+
+                            {teamB.map((player, index) => (
+                                <div key={index}>
+                                    <p>{player}</p>
+                                </div>
+                            ))}
+
+                        </div>
+
+                        <footer className="cardBottom"></footer>
                     </section>
 
                 </div>

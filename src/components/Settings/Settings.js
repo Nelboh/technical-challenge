@@ -3,19 +3,31 @@ import Players from "../Players/Players";
 
 const Settings = () => (
 
-    <section className="settingsPage">
+    <section>
 
-        <article className="card">
-            <h2 className="cardTop">Team Settings</h2>
-            <TeamsForm />
-            <div className="cardBottom"></div>
-        </article>
+        <section className="cardHolder">
+            <header className="cardTop">
+                <h2>Team Settings</h2>
+            </header>
 
-        <article className="card">
-            <h2 className="cardTop">Enter players</h2>
-            <Players />
-            <div className="cardBottom"></div>
-        </article>
+            <div className="cardGreen">
+                <TeamsForm />
+            </div>
+
+            <footer className="cardBottom"></footer>
+        </section>
+
+        <section className="cardHolder">
+
+            <header className="cardTop">
+                <h2>Enter players</h2>
+            </header>
+
+            <div>
+                <Players />
+            </div>
+
+        </section>
 
     </section>
 
