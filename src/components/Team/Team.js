@@ -14,6 +14,8 @@ class Team extends React.Component {
             name: store.getState().teamSettings[this.props.team].details.name,
 
             colour: store.getState().teamSettings[this.props.team].details.colour,
+
+            colourClash: false,
         }
 
         this.handleTeamName = this.handleTeamName.bind(this);
@@ -36,17 +38,19 @@ class Team extends React.Component {
 
         if (compareTeamColours(this.props.team, e.currentTarget.value)) {
 
-            // console.log("Not the same!")
+            this.setState({ colourClash: false });
 
             this.setState({ colour: e.currentTarget.value });
             teamColourUpdater(this.props.team, e.currentTarget.value);
 
         } else {
-            console.log("Is the same!") // stick an error message in here
+            this.setState({ colourClash: true });
         }
     }
 
     render() {
+
+        let colourClash = this.state.colourClash;
 
         return (
             <>
@@ -59,7 +63,13 @@ class Team extends React.Component {
 
                 <section className="kitColourSpacer">
                     <h3>{this.props.defaultTeamName} Kit Colour</h3>
+
+                    {/* {colourClash ? (<p className="errorMessage">Teams must have different kit colours!</p>) : null} */}
+
+                    <p className={colourClash ? "errorMessage" : "errorMessageHidden"}> Teams must have different kit colours!</p>
+
                     <div className="kitButtonHolder">
+
                         <button
                             value="1"
                             className={this.state.colour === "1" ? "kitButton kit1 kitSelected" : "kitButton kit1"}

@@ -17,11 +17,11 @@ class SubmitTeams extends React.Component {
 
             <form onSubmit={this.handleSubmitTeams}>
 
-                <Team team="0" defaultTeamName="Team One" />
+                <Team team={0} defaultTeamName="Team One" />
 
                 <div className="teamsDivider" />
 
-                <Team team="1" defaultTeamName="Team Two" />
+                <Team team={1} defaultTeamName="Team Two" />
 
                 <button
                     type="submit"
