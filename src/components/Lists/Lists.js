@@ -10,9 +10,6 @@ class Lists extends Component {
 
         this.state = {
             settingsComplete: true,
-            teamAName: store.getState().teamSettings[0].details.name,
-            teamBName: store.getState().teamSettings[1].details.name,
-
         };
 
         this.handleOpenSettings = this.handleOpenSettings.bind(this);
@@ -41,6 +38,9 @@ class Lists extends Component {
         let teamAName = store.getState().teamSettings[0].details.name;
         let teamBName = store.getState().teamSettings[1].details.name;
 
+        let teamAColour = "chosenKitColour kit" + store.getState().teamSettings[0].details.colour;
+        let teamBColour = "chosenKitColour kit" + store.getState().teamSettings[1].details.colour;
+
         return (
             <section>
                 <h2>{teamAName} VS. {teamBName}</h2>
@@ -51,7 +51,7 @@ class Lists extends Component {
 
                         <header className="cardTop kitAndName">
                             <h3 className="h3alternate">{teamAName}</h3>
-                            <div className="chosenKitColour"></div>
+                            <div className={teamAColour}></div>
                         </header>
 
                         <div className="cardWhite">
@@ -70,7 +70,7 @@ class Lists extends Component {
 
                         <header className="cardTop kitAndName">
                             <h3 className="h3alternate">{teamBName}</h3>
-                            <div className="chosenKitColour"></div>
+                            <div className={teamBColour}></div>
                         </header>
 
                         <div className="cardWhite">
