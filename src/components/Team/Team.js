@@ -2,6 +2,7 @@ import React from "react";
 import store from "../../data/store";
 
 import compareTeamColours from "../../logic/compareTeamColours";
+import compareTeamNames from "../../logic/compareTeamNames";
 import teamColourUpdater from "../../logic/teamColourUpdater";
 import teamNameUpdater from "../../logic/teamNameUpdater";
 
@@ -16,6 +17,10 @@ class Team extends React.Component {
             colour: store.getState().teamSettings[this.props.team].details.colour,
 
             colourClash: false,
+
+            nameClash: false,
+
+            nameEmpty: false,
         }
 
         this.handleTeamName = this.handleTeamName.bind(this);
@@ -25,8 +30,10 @@ class Team extends React.Component {
     handleTeamName = (e) => {
 
         if (e.currentTarget.value === "") {
+            this.setState({ nameEmpty: true });
             this.setState({ name: this.props.defaultTeamName })
         } else {
+            this.setState({ nameEmpty: false });
             this.setState({ name: e.currentTarget.value });
         }
         teamNameUpdater(this.props.team, e.currentTarget.value);
@@ -51,11 +58,13 @@ class Team extends React.Component {
     render() {
 
         let colourClash = this.state.colourClash;
+        let nameEmpty = this.state.nameEmpty;
 
         return (
             <>
 
                 <h3>{this.props.defaultTeamName} Name</h3>
+                <p className={nameEmpty ? "errorMessage" : "errorMessageHidden"}>Please enter a name.</p>
                 <input
                     onChange={this.handleTeamName}
                     defaultValue={this.state.name}
