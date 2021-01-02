@@ -27,6 +27,7 @@ class Players extends Component {
 
         // This loop updates the saved player name in real-time (probably not the most efficient way to do this)
         // It also forces a placeholder name into the list of players if an input field is left empty
+        // It also prevents an input name being longer than 16 characters, with an ellipsis added
         let newPlayers = [];
         let i;
         for (i = 0; i < this.state.existingPlayers.length; i += 1) {
@@ -35,7 +36,7 @@ class Players extends Component {
                 if (e.currentTarget.value === "") {
                     newPlayers.push("Name not set")
                 } else {
-                    newPlayers.push(e.currentTarget.value)
+                    newPlayers.push(e.currentTarget.value.slice(0, 16) + "...")
                 }
             } else {
                 newPlayers.push(this.state.existingPlayers[i])

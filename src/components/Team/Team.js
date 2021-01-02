@@ -31,7 +31,9 @@ class Team extends React.Component {
     // If they do, a warning message is rendered
     handleTeamName = (e) => {
 
+        let teamName = e.currentTarget.value;
         if (e.currentTarget.value === "") {
+            teamName = this.props.defaultTeamName;
             this.setState({ nameEmpty: true });
             this.setState({ name: this.props.defaultTeamName })
         } else {
@@ -49,7 +51,13 @@ class Team extends React.Component {
                 this.setState({ name: e.currentTarget.value });
             }
         }
-        teamNameUpdater(this.props.team, e.currentTarget.value);
+        // This truncates an input team name to be a maximum of 16 characters long, plus an ellipsis
+        if (teamName.length > 16) {
+            teamName = teamName.slice(0, 16) + "...";
+        }
+
+        teamNameUpdater(this.props.team, teamName);
+
     }
 
     // This updates the chosen team colour for each team
