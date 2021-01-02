@@ -27,7 +27,7 @@ const App = ({ settingsCompleteProp }) => (
     </main>
 
     <footer>
-      <h2 className="h3alternate">© 2020 Ellie Hobbs</h2>
+      <h2 className="h3alternate">© 2020 <a href="https://github.com/Nelboh">Nelboh</a></h2>
     </footer>
   </>
 )
