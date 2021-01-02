@@ -41,7 +41,12 @@ class Players extends Component {
                 } else {
 
                     // It also prevents an input name being longer than 16 characters, with an ellipsis added
-                    newPlayers.push(e.currentTarget.value.slice(0, 16) + "...")
+
+                    let name = e.currentTarget.value;
+                    if (name.length > 16) {
+                        name = name.slice(0, 16) + "...";
+                    }
+                    newPlayers.push(name)
                 }
             } else {
                 newPlayers.push(this.state.existingPlayers[i])
