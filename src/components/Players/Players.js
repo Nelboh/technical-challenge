@@ -14,6 +14,7 @@ class Players extends Component {
             playerName: "",
             existingPlayers: store.getState().players,
             settingsComplete: false,
+
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -28,7 +29,11 @@ class Players extends Component {
         for (i = 0; i < this.state.existingPlayers.length; i += 1) {
 
             if (i === index) {
-                newPlayers.push(e.currentTarget.value)
+                if (e.currentTarget.value === "") {
+                    newPlayers.push("Name not set")
+                } else {
+                    newPlayers.push(e.currentTarget.value)
+                }
             } else {
                 newPlayers.push(this.state.existingPlayers[i])
             }
