@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# 5-a-side Football Team Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome! Here you'll find my 5-a-side football team generator, which I created from scratch in just under a week as the final technical challenge for the DevelopMe Full Stack Developer course. 
 
-## Available Scripts
+Check out the finished page here (https://nelboh.github.io/technical-challenge/), or stick around and take a look at the code from here.
 
-In the project directory, you can run:
+Feel free to use it for something other than football if you want to, like determining who gets to take the lift and who has to take the stairs. 
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How to use the generator
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Team Settings 
 
-### `npm test`
+In Team Settings, you can choose a name and a kit colour for each team. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Any names input here or in the player name fields will be truncated if they're longer than 16 characters.
 
-### `npm run build`
+If you leave the name inputs blank, you'll get a friendly error message. Pushing blank inputs through anyway will give you default team names (Team One and Team Two). 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you type the same name for both teams (why would you do that), you'll get another friendly error message but it won't stop you pushing it through.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You'll also get a friendly error message if you try to give both teams the same kit colour. Please note that there is currently a minor bug with the kit colour error message, but it will go away by itself (see Known Issues below for further details).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Enter Players 
 
-### `npm run eject`
+In Enter Players, you can input ten player names of your choice. If you choose to leave them as-is, they'll render in the final teams listing as Player 1, Player 2, etc. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+If you enter a player name and then remove it (i.e. submit a blank input field), the team lists will render with a placeholder name instead. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Reset button
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+As its name suggests, this will reset everything you've entered and put it back to its default value. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Generate Teams
 
-## Learn More
+If you're happy with your team names, kit colours, and player names, press this button to advance to the next page. It'll randomly shuffle and divide your list of ten names into two teams of five.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Team listings
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You'll see your input team names at the top (Team One vs. Team Two), and also at the top of each individual team component. You'll also see your randomly shuffled player names assigned to a team, and the team's chosen kit colour too.
 
-### Code Splitting
+### Reshuffle button
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+In the event that you don't like your team lineups, you can hit Reshuffle to run the team sorting logic again as many times as you please. Your team names and kit colours will remain unchanged. 
 
-### Analyzing the Bundle Size
+### Settings button
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Click this button to return to the Settings page. Your input data will still be there as long as you don't refresh or close the browser. You can reset everything back to default with the Reset button.
 
-### Making a Progressive Web App
+## Behind the scenes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+If you're interested in seeing the project brief and my subsequent plan of attack, you can check out my project plan here: https://docs.google.com/document/d/11519r9Vn1FxRt2UolZCPWoS5qxew4uZE3nQrNOGrj04/edit?usp=sharing
 
-### Advanced Configuration
+Initial design mockups and wireframes can be found here: https://docs.google.com/document/d/1C0zAhYRit69CA4EO4RiTJMRqSDmnZcp-AgHGHgjxZPs/edit?usp=sharing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Known issues
 
-### Deployment
+### Kit colour buttons may allow both teams to have the same colour in Settings
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+You can trigger this bug by being wilfully difficult and deliberately setting both Team 1 and Team 2 to have the same colour kit, then changing the colour for one of them to something else. If you then select another new colour, it should clear the error messages.
 
-### `npm run build` fails to minify
+Fortunately, setting both teams to have the same kit colour in Settings won't carry over once you hit the Generate Teams button. Instead, the first team to choose that colour will take priority, and the remaining team kit colour will reset to its default. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Team name inputs don't clear upon focus
+
+This is semi-intentional. Initially, I had the logic set to clear these onFocus as with the player name inputs, but it was causing complications with the default name, so I've put this aside to deal with another day. 
+
+### Switching page on mobile sets your starting scroll position partway down the new page
+
+If anyone knows a simple fix for this, please let me know! 
+
