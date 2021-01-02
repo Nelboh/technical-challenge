@@ -26,16 +26,21 @@ class Players extends Component {
     handleChange = (index, e) => {
 
         // This loop updates the saved player name in real-time (probably not the most efficient way to do this)
-        // It also forces a placeholder name into the list of players if an input field is left empty
-        // It also prevents an input name being longer than 16 characters, with an ellipsis added
+
         let newPlayers = [];
         let i;
         for (i = 0; i < this.state.existingPlayers.length; i += 1) {
 
+            // Checks if this is the player that needs updating via its index
             if (i === index) {
+
+                // This forces a placeholder name into the list of players if an input field is left empty
                 if (e.currentTarget.value === "") {
                     newPlayers.push("Name not set")
+
                 } else {
+
+                    // It also prevents an input name being longer than 16 characters, with an ellipsis added
                     newPlayers.push(e.currentTarget.value.slice(0, 16) + "...")
                 }
             } else {
@@ -46,7 +51,7 @@ class Players extends Component {
         this.setState({ existingPlayers: newPlayers });
     }
 
-    // Once the players have been input, the submit button updates the player list in state
+    // Once the players have been input, the submit button updates the player list in store state
     // Then it runs the teamSorter logic to shuffle and split the teams
     // Then settings complete is set to true via settings_complete, so the List component will render instead
     handleSubmit = (e) => {
@@ -69,6 +74,7 @@ class Players extends Component {
             <section>
                 <div className="playerColumns cardGreen">
 
+                    {/* This creates new entries for the player list by mapping through the array of player names */}
                     {this.state.existingPlayers.map((player, index) => (
                         <div className="playerRows" key={index}>
 

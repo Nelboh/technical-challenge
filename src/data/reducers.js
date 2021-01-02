@@ -74,12 +74,12 @@ const reducer = (state, action) => {
             // }
         }
 
-        // This sorts half of the shuffled player list into the empty teamA[]
+        // This stores half of the shuffled player list in teamA[]
         case "SET_TEAM_A": {
             return { ...state, teamA: action.payload };
         }
 
-        // This sorts half of the shuffled player list into the empty teamB[]
+        // This stores half of the shuffled player list in teamB[]
         case "SET_TEAM_B": {
             return { ...state, teamB: action.payload };
         }
@@ -94,7 +94,7 @@ const reducer = (state, action) => {
             return { ...state, settingsComplete: false };
         }
 
-        // This updates the value of players[]
+        // This updates the values stored in players[]
         case "UPDATE_PLAYERS": {
             return { ...state, players: action.payload };
         }

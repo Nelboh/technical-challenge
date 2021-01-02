@@ -22,7 +22,7 @@ class Lists extends Component {
         store.dispatch({ type: "SETTINGS_INCOMPLETE" });
     }
 
-    // This calls the original teamSorter logic and re-runs it, then updates teamA and teamB to reflect the new random values
+    // This calls the teamSorter logic again and re-runs it, then updates teamA and teamB to reflect the new random values
     handleReshuffle = (e) => {
         e.preventDefault();
         teamSorter();
@@ -57,6 +57,7 @@ class Lists extends Component {
 
                 <div className="twoLists">
 
+                    {/* This is the Team A section */}
                     <section className="cardHolder">
 
                         <header className="cardTop kitAndName">
@@ -65,6 +66,8 @@ class Lists extends Component {
                         </header>
 
                         <div className="cardWhite">
+
+                            {/* This maps the individual players from the teamA list */}
 
                             {teamA.map((player, index) => (
                                 <div key={index}>
@@ -76,6 +79,7 @@ class Lists extends Component {
                         <footer className="cardBottom"></footer>
                     </section>
 
+                    {/* This is the Team B section */}
                     <section className="cardHolder">
 
                         <header className="cardTop kitAndName">
@@ -85,6 +89,7 @@ class Lists extends Component {
 
                         <div className="cardWhite">
 
+                            {/* This maps the individual players from the teamB list */}
                             {teamB.map((player, index) => (
                                 <div key={index}>
                                     <p>{player}</p>

@@ -13,8 +13,12 @@ class Team extends React.Component {
         super(props);
 
         this.state = {
+
+            // These fetch the name and colour from store state, accessed via their index (0 or 1)
             name: store.getState().teamSettings[this.props.team].details.name,
             colour: store.getState().teamSettings[this.props.team].details.colour,
+
+            // These help with validating the inputs, for duplicate names or fields that haven't been filled out
             colourClash: false,
             nameClash: false,
             nameEmpty: false,
@@ -25,18 +29,20 @@ class Team extends React.Component {
     }
 
     // This updates the input name for each team
-    // If the input is left empty, it triggers nameEmpty = true, which renders a warning message
-    // It also sets a default team name if nameEmpty = true
-    // If nameEmpty = false, it checks if Team 1 and 2 have the same names (nameClash = true)
-    // If they do, a warning message is rendered
     handleTeamName = (e) => {
 
         let teamName = e.currentTarget.value;
+
+        // If the input is left empty, it triggers nameEmpty = true, which renders a warning message
+        // It also sets a default team name if nameEmpty = true
         if (e.currentTarget.value === "") {
             teamName = this.props.defaultTeamName;
             this.setState({ nameEmpty: true });
             this.setState({ name: this.props.defaultTeamName })
         } else {
+
+            // If nameEmpty = false, it checks if Team 1 and 2 have the same names (nameClash = true)
+            // If they do, a warning message is rendered
             this.setState({ nameEmpty: false });
             this.setState({ nameClash: false });
             if (compareTeamNames(this.props.team, e.currentTarget.value)) {
@@ -88,8 +94,11 @@ class Team extends React.Component {
             <>
 
                 <h3>{this.props.defaultTeamName} Name</h3>
+
+                {/* This changes the class name for each error message, adjusting the styling to show or hide said message depending on the conditions met */}
                 <p className={nameEmpty ? "errorMessage" : "errorMessageHidden"}>Please enter a name</p>
                 <p className={nameClash ? "errorMessage" : "errorMessageHidden"}>Team names must be different</p>
+
                 <input
                     onChange={this.handleTeamName}
                     defaultValue={this.state.name}
@@ -98,10 +107,12 @@ class Team extends React.Component {
                 <section className="kitColourSpacer">
                     <h3>{this.props.defaultTeamName} Kit Colour</h3>
 
+                    {/* This is another error message with styling that changes depending on conditions met */}
                     <p className={colourClash ? "errorMessage" : "errorMessageHidden"}> Teams must have different kit colours</p>
 
                     <div className="kitButtonHolder">
 
+                        {/* These could be refactored to be a single component with props */}
                         <button
                             value="1"
                             className={this.state.colour === "1" ? "kitButton kit1 kitSelected" : "kitButton kit1"}

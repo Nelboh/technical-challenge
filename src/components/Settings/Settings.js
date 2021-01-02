@@ -7,6 +7,7 @@ const Settings = () => (
 
     <section>
 
+        {/* This is the team details section */}
         <section className="cardHolder">
             <header className="cardTop">
                 <h2>Team Settings</h2>
@@ -23,6 +24,7 @@ const Settings = () => (
             <footer className="cardBottom"></footer>
         </section>
 
+        {/* This is the player details section */}
         <section className="cardHolder">
 
             <header className="cardTop">
