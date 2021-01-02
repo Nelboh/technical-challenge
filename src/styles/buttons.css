@@ -5,6 +5,8 @@
     width: 1.5rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .kitButton:hover {
