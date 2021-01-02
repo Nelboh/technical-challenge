@@ -1,6 +1,8 @@
 import Team from "../Team/Team";
 import Players from "../Players/Players";
 
+// This component renders two instances of the Team component, with different props (index 0 and 1) to determine which team it is
+
 const Settings = () => (
 
     <section>

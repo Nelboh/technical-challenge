@@ -27,7 +27,7 @@ function handleTeam(type, team) {
     store.dispatch(setTeam(type, team))
 }
 
-// This takes the array and splits it in half. In case of an odd number of players, TeamA will be larger.
+// This takes the array and splits it in half. In case of an odd number of players (which isn't possible currently), TeamA will be larger.
 const splitArray = (array) => {
 
     const half = Math.ceil(array.length / 2);
@@ -41,12 +41,14 @@ const splitArray = (array) => {
 }
 
 const teamSorter = () => {
-    // Make a copy of the original array 
+    // Make a copy of the original array
     let originalArray = store.getState().players
     let inputArray = [...originalArray]
 
+    // Shuffle said copy
     let shuffledArray = shuffleArray(inputArray)
 
+    // Split the shuffled copy
     splitArray(shuffledArray)
 };
 

@@ -90,5 +90,5 @@ p {
 }
 
 .errorMessageHidden {
-    visibility: hidden;
+    display: none;
 }

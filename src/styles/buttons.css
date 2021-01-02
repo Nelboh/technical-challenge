@@ -41,7 +41,7 @@
     }
 }
 
-/* For Galaxy Fold screen sizes */
+/* For Galaxy Fold screen size */
 @media screen and (max-width: 280px) {
     .kitButton{
         height: 1.4rem;
@@ -113,7 +113,7 @@
     padding-bottom: 1rem;
 }
 
-/* Removed default outline focus, but have replaced with box shadow outline so it's still clearly visible when selected. Checked it would pass contrast ratio check here: https://webaim.org/resources/contrastchecker/ */
+/* Removed default outline focus on kit buttons, but have replaced with box shadow outline so it's still clearly visible when selected. Checked it would pass contrast ratio check here: https://webaim.org/resources/contrastchecker/ */
 
 button:focus {
     outline:0;

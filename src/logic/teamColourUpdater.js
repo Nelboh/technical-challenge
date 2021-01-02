@@ -10,7 +10,6 @@ function setTeamColour(index, colour) {
     }
 }
 
-
 const teamColourUpdater = (index, colour) => {
     store.dispatch(setTeamColour(index, colour))
 }

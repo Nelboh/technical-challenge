@@ -1,6 +1,8 @@
 import Settings from "../Settings/Settings";
 import Lists from "../Lists/Lists";
 
+// SettingsCompleteProp comes from the App>index file. 
+// SettingsComplete is set to true when the submit button in Settings > Players is clicked
 const App = ({ settingsCompleteProp }) => (
 
   <>
@@ -11,9 +13,7 @@ const App = ({ settingsCompleteProp }) => (
     <main>
 
       {
-
         !settingsCompleteProp ? (
-
 
           <Settings />
 
@@ -22,7 +22,6 @@ const App = ({ settingsCompleteProp }) => (
             <Lists />
 
           )
-
       }
 
     </main>
@@ -30,7 +29,6 @@ const App = ({ settingsCompleteProp }) => (
     <footer>
       <h2 className="h3alternate">© 2020 Ellie Hobbs</h2>
     </footer>
-
   </>
 )
 

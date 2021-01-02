@@ -1,6 +1,7 @@
 import React from "react";
 import store from "../../data/store";
 
+// Logic files
 import compareTeamColours from "../../logic/compareTeamColours";
 import compareTeamNames from "../../logic/compareTeamNames";
 import teamColourUpdater from "../../logic/teamColourUpdater";
@@ -13,13 +14,9 @@ class Team extends React.Component {
 
         this.state = {
             name: store.getState().teamSettings[this.props.team].details.name,
-
             colour: store.getState().teamSettings[this.props.team].details.colour,
-
             colourClash: false,
-
             nameClash: false,
-
             nameEmpty: false,
         }
 
@@ -27,6 +24,11 @@ class Team extends React.Component {
         this.handleTeamColour = this.handleTeamColour.bind(this);
     }
 
+    // This updates the input name for each team
+    // If the input is left empty, it triggers nameEmpty = true, which renders a warning message
+    // It also sets a default team name if nameEmpty = true
+    // If nameEmpty = false, it checks if Team 1 and 2 have the same names (nameClash = true)
+    // If they do, a warning message is rendered
     handleTeamName = (e) => {
 
         if (e.currentTarget.value === "") {
@@ -50,6 +52,8 @@ class Team extends React.Component {
         teamNameUpdater(this.props.team, e.currentTarget.value);
     }
 
+    // This updates the chosen team colour for each team
+    // If team colours are the same (colourClash = true), a warning message is rendered
     handleTeamColour = (e) => {
 
         this.setState({ colour: e.currentTarget.value });

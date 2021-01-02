@@ -1,6 +1,7 @@
 import { Component } from "react";
 import store from "../../data/store";
 
+// Logic files
 import teamSorter from "../../logic/teamSorter";
 import playersUpdater from "../../logic/playersUpdater";
 import handleResetPlayers from "../../logic/resetPlayers";
@@ -24,6 +25,8 @@ class Players extends Component {
 
     handleChange = (index, e) => {
 
+        // This loop updates the saved player name in real-time (probably not the most efficient way to do this)
+        // It also forces a placeholder name into the list of players if an input field is left empty
         let newPlayers = [];
         let i;
         for (i = 0; i < this.state.existingPlayers.length; i += 1) {
@@ -42,6 +45,9 @@ class Players extends Component {
         this.setState({ existingPlayers: newPlayers });
     }
 
+    // Once the players have been input, the submit button updates the player list in state
+    // Then it runs the teamSorter logic to shuffle and split the teams
+    // Then settings complete is set to true via settings_complete, so the List component will render instead
     handleSubmit = (e) => {
         e.preventDefault();
         playersUpdater(this.state.existingPlayers);
@@ -49,6 +55,7 @@ class Players extends Component {
         store.dispatch({ type: "SETTINGS_COMPLETE" });
     }
 
+    // This button allows the user to reset all input fields and colour choices back to the default
     handleReset = (e) => {
         e.preventDefault();
         handleResetPlayers("RESET");

@@ -3,11 +3,10 @@ import initial from "./initial";
 const reducer = (state, action) => {
     switch (action.type) {
 
-
-        // The two sets of code below do the same thing, but the uncommented version was easier for my brain to handle.
+        // The two sets of code below do the same thing, but the top version was easier for my brain to handle.
 
         case "SET_TEAM_COLOUR": {
-            // This lets me select a specific version of details from the TeamSettings array, via its index
+            // This selects a specific instance of details from the TeamSettings array, targeted via its index
             const index = action.payload.index;
 
             // Makes a copy of details (via its index), and sets its colour attribute
@@ -25,7 +24,7 @@ const reducer = (state, action) => {
             // Returns the updated copy
             return updatedTeamSettings;
 
-            // This version came from the React documentation and scrambles my brain
+            // This version came from the React documentation but for me is less easy to read
 
             // const index = action.payload.index;
             // return {
@@ -75,31 +74,37 @@ const reducer = (state, action) => {
             // }
         }
 
+        // This sorts half of the shuffled player list into the empty teamA[]
         case "SET_TEAM_A": {
             return { ...state, teamA: action.payload };
         }
 
+        // This sorts half of the shuffled player list into the empty teamB[]
         case "SET_TEAM_B": {
             return { ...state, teamB: action.payload };
         }
 
+        // This sets settingsComplete to true, which is necessary for App to render either the Settings or List component
         case "SETTINGS_COMPLETE": {
             return { ...state, settingsComplete: true };
         }
 
+        // The reverse of the above, which allows the user to go back to the Settings component
         case "SETTINGS_INCOMPLETE": {
             return { ...state, settingsComplete: false };
         }
 
+        // This updates the value of players[]
         case "UPDATE_PLAYERS": {
             return { ...state, players: action.payload };
         }
 
+        // This resets any of the user's changes back to their default values
         case "RESET": return {
             ...initial,
         }
 
-        // as a fallback in case none of the above are used, the default returns the state unchanged
+        // As a fallback in case none of the above are used, the default returns the state unchanged
         default: return state;
 
     }

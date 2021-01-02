@@ -10,7 +10,6 @@ function setTeamName(index, name) {
     }
 }
 
-
 const teamNameUpdater = (index, name) => {
     store.dispatch(setTeamName(index, name))
 }
