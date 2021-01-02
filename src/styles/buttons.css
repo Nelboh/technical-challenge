@@ -37,7 +37,7 @@
 /* For smaller mobile sizes */
 @media screen and (max-width: 414px) {
     .kitButtonHolder {
-        width: 100%;
+        width: 90%;
     }
 }
 
@@ -111,6 +111,13 @@
     height: fit-content;
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+
+/* For Galaxy Fold screen size */
+@media screen and (max-width: 280px) {
+    .listButtons {
+        display: grid;
+    }
 }
 
 /* Removed default outline focus on kit buttons, but have replaced with box shadow outline so it's still clearly visible when selected. Checked it would pass contrast ratio check here: https://webaim.org/resources/contrastchecker/ */

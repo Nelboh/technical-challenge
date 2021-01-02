@@ -4,9 +4,10 @@ form {
 
 .cardHolder {
     display: grid;
-    border-radius: 20px; 
+    border-radius: 10px; 
     background-color: var(--offWhite);
-    margin: 2rem;
+    margin: auto;
+    margin-bottom: 2rem;
     text-align: center;
     width: 90%;
 }
@@ -14,7 +15,9 @@ form {
 /* For smallest screen sizes */
 @media screen and (max-width: 360px) {
     .cardHolder {
-        margin: 1rem;
+        margin: auto;
+        margin-bottom: 2rem;
+        /* margin: 1rem; */
     }
 }
 
@@ -72,8 +75,8 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    /* padding-left: 2rem;
+    padding-right: 2rem; */
 }
 
 .teamsDivider {
