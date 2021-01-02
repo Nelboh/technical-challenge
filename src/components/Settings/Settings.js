@@ -1,4 +1,4 @@
-import TeamsForm from "../TeamsForm";
+import Team from "../Team/Team";
 import Players from "../Players/Players";
 
 const Settings = () => (
@@ -11,7 +11,11 @@ const Settings = () => (
             </header>
 
             <div className="cardGreen">
-                <TeamsForm />
+                <Team team={0} defaultTeamName="Team One" />
+
+                <div className="teamsDivider" />
+
+                <Team team={1} defaultTeamName="Team Two" />
             </div>
 
             <footer className="cardBottom"></footer>
