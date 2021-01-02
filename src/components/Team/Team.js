@@ -86,8 +86,6 @@ class Team extends React.Component {
                 <section className="kitColourSpacer">
                     <h3>{this.props.defaultTeamName} Kit Colour</h3>
 
-                    {/* {colourClash ? (<p className="errorMessage">Teams must have different kit colours!</p>) : null} */}
-
                     <p className={colourClash ? "errorMessage" : "errorMessageHidden"}> Teams must have different kit colours</p>
 
                     <div className="kitButtonHolder">
