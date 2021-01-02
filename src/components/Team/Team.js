@@ -34,7 +34,18 @@ class Team extends React.Component {
             this.setState({ name: this.props.defaultTeamName })
         } else {
             this.setState({ nameEmpty: false });
-            this.setState({ name: e.currentTarget.value });
+            this.setState({ nameClash: false });
+            if (compareTeamNames(this.props.team, e.currentTarget.value)) {
+                this.setState({ nameClash: false });
+
+                this.setState({ name: e.currentTarget.value });
+
+                teamNameUpdater(this.props.team, e.currentTarget.value);
+
+            } else {
+                this.setState({ nameClash: true });
+                this.setState({ name: e.currentTarget.value });
+            }
         }
         teamNameUpdater(this.props.team, e.currentTarget.value);
     }
@@ -58,13 +69,15 @@ class Team extends React.Component {
     render() {
 
         let colourClash = this.state.colourClash;
+        let nameClash = this.state.nameClash;
         let nameEmpty = this.state.nameEmpty;
 
         return (
             <>
 
                 <h3>{this.props.defaultTeamName} Name</h3>
-                <p className={nameEmpty ? "errorMessage" : "errorMessageHidden"}>Please enter a name.</p>
+                <p className={nameEmpty ? "errorMessage" : "errorMessageHidden"}>Please enter a name</p>
+                <p className={nameClash ? "errorMessage" : "errorMessageHidden"}>Team names must be different</p>
                 <input
                     onChange={this.handleTeamName}
                     defaultValue={this.state.name}
@@ -75,7 +88,7 @@ class Team extends React.Component {
 
                     {/* {colourClash ? (<p className="errorMessage">Teams must have different kit colours!</p>) : null} */}
 
-                    <p className={colourClash ? "errorMessage" : "errorMessageHidden"}> Teams must have different kit colours!</p>
+                    <p className={colourClash ? "errorMessage" : "errorMessageHidden"}> Teams must have different kit colours</p>
 
                     <div className="kitButtonHolder">
 
