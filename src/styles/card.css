@@ -78,7 +78,8 @@ form {
 
 .teamsDivider {
     width: 100%;
-    border-bottom: 7px dotted var(--darkGrey);
+    background: linear-gradient(90deg, var(--lightGreen), var(--midGreen) 20% 80%, var(--lightGreen));
+    height: 2px;
     margin: auto;
     margin-bottom: 3rem;
 }
