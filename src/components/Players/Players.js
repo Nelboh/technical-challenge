@@ -70,6 +70,7 @@ class Players extends Component {
                                 defaultValue={player}
                                 index={index}
                                 onBlur={this.handleChange.bind(this, index)}
+                                onFocus={(e) => e.target.value = ""}
                             ></input>
 
                         </div>
