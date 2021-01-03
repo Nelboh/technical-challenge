@@ -104,9 +104,9 @@ class Lists extends Component {
                 </div>
 
                 <div className="listButtons">
-                    <button onClick={this.handleOpenSettings} className="pillButton">Settings</button>
+                    <button onClick={this.handleOpenSettings} className="pillButton" aria-label="Back to Settings">Settings</button>
 
-                    <button onClick={this.handleReshuffle} className="pillButton">Reshuffle</button>
+                    <button onClick={this.handleReshuffle} className="pillButton" aria-label="Reshuffle Teams">Reshuffle</button>
                 </div>
             </section>
         )

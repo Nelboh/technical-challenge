@@ -52,8 +52,15 @@ label {
     font-family: "Oswald", sans-serif;
 	text-transform: uppercase;
 	font-weight: 500;
-	font-size: calc(12px + 1.5vw);
-	color: var(--offWhite);
+	font-size: calc(16px + 1.5vw);
+    color: var(--darkGrey);
+    text-align: center;
+    margin-right: 1rem;
+}
+
+label.headerLabel {
+    display: block;
+    margin-top: 1rem;
 }
 
 input {

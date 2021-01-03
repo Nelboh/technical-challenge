@@ -83,13 +83,14 @@ class Players extends Component {
                     {this.state.existingPlayers.map((player, index) => (
                         <div className="playerRows" key={index}>
 
-                            <h3 className="playerLabel">Player {index + 1}</h3>
+                            <label htmlFor="player name" className="playerLabel">Player {index + 1}</label>
 
                             <input
                                 defaultValue={player}
                                 index={index}
                                 onBlur={this.handleChange.bind(this, index)}
                                 onFocus={(e) => e.target.value = ""}
+                                name="player name"
                             ></input>
 
                         </div>
@@ -99,13 +100,13 @@ class Players extends Component {
 
                 <footer className="cardBottom playersButtons">
 
-                    <button onClick={this.handleReset} className="pillButton">Reset all</button>
+                    <button onClick={this.handleReset} className="pillButton" aria-label="Reset settings">Reset all</button>
 
-                    <button type="submit" onClick={this.handleSubmit} className="pillButton">Generate Teams</button>
+                    <button type="submit" onClick={this.handleSubmit} className="pillButton" aria-label="Generate Teams">Generate Teams</button>
 
                 </footer>
 
-            </section>
+            </section >
         )
     }
 }

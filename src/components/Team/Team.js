@@ -93,7 +93,7 @@ class Team extends React.Component {
         return (
             <>
 
-                <h3>{this.props.defaultTeamName} Name</h3>
+                <label className="headerLabel" htmlFor="team name">{this.props.defaultTeamName} Name</label>
 
                 {/* This changes the class name for each error message, adjusting the styling to show or hide said message depending on the conditions met */}
                 <p className={nameEmpty ? "errorMessage" : "errorMessageHidden"}>Please enter a name</p>
@@ -102,6 +102,7 @@ class Team extends React.Component {
                 <input
                     onChange={this.handleTeamName}
                     defaultValue={this.state.name}
+                    name="team name"
                 />
 
                 <section className="kitColourSpacer">
@@ -117,30 +118,35 @@ class Team extends React.Component {
                             value="1"
                             className={this.state.colour === "1" ? "kitButton kit1 kitSelected" : "kitButton kit1"}
                             onClick={this.handleTeamColour}
+                            aria-label="Blue"
                         />
 
                         <button
                             value="2"
                             className={this.state.colour === "2" ? "kitButton kit2 kitSelected" : "kitButton kit2"}
                             onClick={this.handleTeamColour}
+                            aria-label="Green"
                         />
 
                         <button
                             value="3"
                             className={this.state.colour === "3" ? "kitButton kit3 kitSelected" : "kitButton kit3"}
                             onClick={this.handleTeamColour}
+                            aria-label="Yellow"
                         />
 
                         <button
                             value="4"
                             className={this.state.colour === "4" ? "kitButton kit4 kitSelected" : "kitButton kit4"}
                             onClick={this.handleTeamColour}
+                            aria-label="Red"
                         />
 
                         <button
                             value="5"
                             className={this.state.colour === "5" ? "kitButton kit5 kitSelected" : "kitButton kit5"}
                             onClick={this.handleTeamColour}
+                            aria-label="Pink"
                         />
 
                     </div>
