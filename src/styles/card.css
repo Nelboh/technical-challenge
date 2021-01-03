@@ -10,9 +10,9 @@ form {
     margin-bottom: 2rem;
     text-align: center;
     width: 90%;
-    box-shadow: 2px 7px 19px 0px rgba(0,0,0,0.51);
--webkit-box-shadow: 2px 7px 19px 0px rgba(0,0,0,0.51);
--moz-box-shadow: 2px 7px 19px 0px rgba(0,0,0,0.51);
+    box-shadow: 2px 7px 19px 0px rgba(0,0,0,0.51); 
+    -webkit-box-shadow: 2px 7px 19px 0px rgba(0,0,0,0.51);
+    -moz-box-shadow: 2px 7px 19px 0px rgba(0,0,0,0.51);
 }
 
 /* For smallest screen sizes */
