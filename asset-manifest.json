@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/technical-challenge/static/css/main.279301d3.chunk.css",
-    "main.js": "/technical-challenge/static/js/main.2c11893f.chunk.js",
-    "main.js.map": "/technical-challenge/static/js/main.2c11893f.chunk.js.map",
+    "main.css": "/technical-challenge/static/css/main.d56519b2.chunk.css",
+    "main.js": "/technical-challenge/static/js/main.8dba35fa.chunk.js",
+    "main.js.map": "/technical-challenge/static/js/main.8dba35fa.chunk.js.map",
     "runtime-main.js": "/technical-challenge/static/js/runtime-main.7db74f3c.js",
     "runtime-main.js.map": "/technical-challenge/static/js/runtime-main.7db74f3c.js.map",
     "static/js/2.0ea9e387.chunk.js": "/technical-challenge/static/js/2.0ea9e387.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.e2af8cd7.chunk.js": "/technical-challenge/static/js/3.e2af8cd7.chunk.js",
     "static/js/3.e2af8cd7.chunk.js.map": "/technical-challenge/static/js/3.e2af8cd7.chunk.js.map",
     "index.html": "/technical-challenge/index.html",
-    "static/css/main.279301d3.chunk.css.map": "/technical-challenge/static/css/main.279301d3.chunk.css.map",
+    "static/css/main.d56519b2.chunk.css.map": "/technical-challenge/static/css/main.d56519b2.chunk.css.map",
     "static/js/2.0ea9e387.chunk.js.LICENSE.txt": "/technical-challenge/static/js/2.0ea9e387.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7db74f3c.js",
     "static/js/2.0ea9e387.chunk.js",
-    "static/css/main.279301d3.chunk.css",
-    "static/js/main.2c11893f.chunk.js"
+    "static/css/main.d56519b2.chunk.css",
+    "static/js/main.8dba35fa.chunk.js"
   ]
 }
